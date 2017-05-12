@@ -18,7 +18,7 @@ class bcolors:
 
 def parse_layers():
     if not os.path.isfile(layer_file):
-        print("No layers file \"{0}\" found!".format(layer_file))
+        print(bcolors.FAIL + "No layers file \"{0}\" found!".format(layer_file) + bcolors.ENDC)
         exit(-1)
     else:
         layers = []
@@ -36,7 +36,7 @@ def is_valid_layer(layer):
         print("\"{0}\": Missing install file!".format(layer))
         return False
     if not os.access(layer_folder + layer + "/" + install_file, os.X_OK):
-        print("\"{0}\": Install file not executable!".format(layer))
+        print( bcolors.FAIL + "\"{0}\": Install file not executable!".format(layer) + bcolors.ENDC)
         return False
     return True
 

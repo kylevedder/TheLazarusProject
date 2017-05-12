@@ -1,3 +1,4 @@
 #!/bin/bash
+sudo apt install git
 git config --global user.name "Kyle Vedder"
 git config --global user.email "kyle.c.vedder@gmail.com"
