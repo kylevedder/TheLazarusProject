@@ -2,6 +2,7 @@ prepare-apt
 setup-lubuntu
 setup-ssh
 setup-git
+emacs
 thunderbird
 latex
 python-scientific

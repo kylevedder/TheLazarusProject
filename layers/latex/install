@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Hello LaTeX"
+sudo apt install texlive-full
