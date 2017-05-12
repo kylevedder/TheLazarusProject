@@ -1,5 +1,6 @@
 prepare-apt
 setup-lubuntu
 setup-ssh
+setup-git
 latex
 python-scientific
