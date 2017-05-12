@@ -1,0 +1,3 @@
+#!/bin/bash
+cat lubuntu-rc.xml > ~/.config/openbox/lubuntu-rc.xml
+sudo cat pc > /usr/share/X11/xkb/symbols/pc
