@@ -3,13 +3,13 @@
 Getting The Lazarus Project is as simple as follows:
 
 ```
-wget -qO- goo.gl/0emHna | sudo bash
+wget -qO- goo.gl/0emHna | bash
 ```
 
 or
 
 ```
-wget -qO- tinyurl.com/TheLazarusProject | sudo bash
+wget -qO- tinyurl.com/TheLazarusProject | bash
 ```
 
 This should work on all fresh Ubuntu systems with no prior dependencies.

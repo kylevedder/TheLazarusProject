@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import os
-import subprocess
 
 layer_file = "lazarus.layers"
 layer_folder = "layers/"
