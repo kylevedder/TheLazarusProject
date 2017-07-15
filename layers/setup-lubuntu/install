@@ -3,4 +3,6 @@ sudo apt install xdotool wmctrl pavucontrol arandr && (mkdir ~/bin > /dev/null 2
 cat move-to-next-monitor > ~/bin/move-to-next-monitor && \
 chmod a+x ~/bin/move-to-next-monitor && \
 cat lubuntu-rc.xml > ~/.config/openbox/lubuntu-rc.xml && \
-sudo bash -c "cat pc > /usr/share/X11/xkb/symbols/pc"
+sudo bash -c "cat pc > /usr/share/X11/xkb/symbols/pc" && \
+sudo chown `whoami` ~/.bash_history
+
