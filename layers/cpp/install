@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo apt-get install clang g++ qtbase5-dev cmake libpopt-dev \
+    libeigen3-dev libgoogle-perftools-dev kcachegrind valgrind libprotobuf-dev \
+    protobuf-compiler libsuitesparse-dev libgoogle-glog-dev python3-numpy \
+    python3-scipy python3-matplotlib python3-pip python-setuptools python-dev \
+    libblas-dev liblapack-dev libopenmpi-dev build-essential\
+    qt4-default libiomp-dev clang-format whiptail
