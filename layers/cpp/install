@@ -5,4 +5,4 @@ sudo apt-get install clang g++ qtbase5-dev cmake libpopt-dev \
     python3-scipy python3-matplotlib python3-pip python-setuptools python-dev \
     libblas-dev liblapack-dev libopenmpi-dev build-essential\
     qt4-default libqt4-dev qt4-dev-tools libiomp-dev clang-format whiptail\
-    imagemagick
+    imagemagick cimg-dev
