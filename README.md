@@ -17,5 +17,5 @@ This should work on all fresh Ubuntu systems with no prior dependencies.
 Once The Lazarus Project is installed, setup the desired layers in `lazarus.layers`, and then install with:
 
 ```
-./main.py
+./run_me.py
 ```
