@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install xdotool wmctrl pavucontrol arandr && (mkdir ~/bin > /dev/null 2>&1 || true) && \
+sudo apt -y install xdotool wmctrl pavucontrol arandr && (mkdir ~/bin > /dev/null 2>&1 || true) && \
 cat move-to-next-monitor > ~/bin/move-to-next-monitor && \
 chmod a+x ~/bin/move-to-next-monitor && \
 cat lubuntu-rc.xml > ~/.config/openbox/lubuntu-rc.xml && \

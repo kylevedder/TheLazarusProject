@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install clang g++ qtbase5-dev cmake libpopt-dev \
+sudo apt -y install clang g++ qtbase5-dev cmake libpopt-dev \
     libeigen3-dev libgoogle-perftools-dev kcachegrind valgrind libprotobuf-dev \
     protobuf-compiler libsuitesparse-dev libgoogle-glog-dev python3-numpy \
     python3-scipy python3-matplotlib python3-pip python-setuptools python-dev \

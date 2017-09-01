@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install gimp kdenlive
+sudo apt -y install gimp kdenlive
