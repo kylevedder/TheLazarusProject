@@ -1,0 +1,5 @@
+#!/bin/bash
+# Manual install instructions:
+# https://askubuntu.com/questions/851069/latest-nvidia-driver-on-ubuntu-16-04
+sudo add-apt-repository ppa:graphics-drivers/ppa && sudo apt update && 
+sudo ubuntu-drivers autoinstall

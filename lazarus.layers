@@ -2,8 +2,12 @@ prepare-apt
 setup-lubuntu
 setup-ssh
 setup-git
+setup-nvidia
 emacs
 thunderbird
 latex
+setup-openvpn
 python-scientific
 cpp
+image-video
+tools
