@@ -13,6 +13,7 @@ local menubar = require("menubar")
 -- Battery library
 local battery_widget = require("battery-widget")
 
+
 -- Load Debian menu entries
 require("debian.menu")
 
@@ -263,8 +264,8 @@ globalkeys = awful.util.table.join(
     awful.key({ "Control", "Mod1" }, "l",      function () awful.util.spawn_with_shell("dm-tool lock")  end),
     awful.key({ "Control", "Mod1" }, "s",      function () awful.util.spawn_with_shell("dm-tool lock && systemctl suspend")  end),
     awful.key({ "Control", "Mod1" }, "e",      function () awful.util.spawn_with_shell("lxsession-logout")  end),
-    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell("bright=$(xrandr --verbose | grep rightness | awk '{ print $2-0.1 }'); xrandr --output eDP-1-1 --brightness $bright")  end),
-    awful.key({                   }, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell("bright=$(xrandr --verbose | grep rightness | awk '{ print $2+0.1 }'); xrandr --output eDP-1-1 --brightness $bright")  end),
+    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell("lux -m 30 -M 600 -s 30")  end),
+    awful.key({                   }, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell("lux -m 30 -M 600 -a 30")  end),
     awful.key({                   }, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer -D pulse -q sset Master 3%- unmute")  end),
     awful.key({                   }, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("amixer -D pulse -q sset Master 3%+ unmute")  end),
     awful.key({                   }, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer -D pulse -q sset Master toggle")  end),
