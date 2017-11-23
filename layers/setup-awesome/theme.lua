@@ -1,100 +1,145 @@
----------------------------
--- Default awesome theme --
----------------------------
+------------------------------------------------
+--    "Zenburn" awesome theme                 --
+--    By Adrian C. (anrxc)                    --
+--    Modified by Kyle Vedder (kylevedder)    --
+------------------------------------------------
+local awful = require("awful")
+local themes_path = require("gears.filesystem").get_themes_dir()
+local dpi = require("beautiful.xresources").apply_dpi
 
-theme = {}
+-- {{{ Main
+local theme = {}
+theme.wallpaper = (awful.util.getdir("config") .. "/zenburn-background.png")
 
-theme.font          = "monospace 12"
+-- }}}
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+-- {{{ Styles
+theme.font      = "Roboto Mono Medium  11"
 
--- Font colors
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+-- {{{ Colors
+theme.fg_normal  = "#DCDCCC"
+theme.fg_focus   = "#F0DFAF"
+theme.fg_urgent  = "#CC9393"
+theme.bg_normal  = "#3F3F3F"
+theme.bg_focus   = "#1E2320"
+theme.bg_urgent  = "#3F3F3F"
+theme.bg_systray = theme.bg_normal
+-- }}}
 
-theme.border_width  = 1
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+-- {{{ Borders
+theme.useless_gap   = dpi(8)
+theme.border_width  = dpi(2)
+theme.border_normal = "#3F3F3F"
+theme.border_focus  = "#6F6F6F"
+theme.border_marked = "#CC9393"
+-- }}}
+
+-- {{{ Titlebars
+theme.titlebar_bg_focus  = "#3F3F3F"
+theme.titlebar_bg_normal = "#3F3F3F"
+-- }}}
+
 
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
+-- [taglist|tasklist]_[bg|fg]_[focus|urgent|occupied|empty|volatile]
+-- titlebar_[normal|focus]
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.taglist_fg_empty = "#555555"
+theme.taglist_fg_focus = "#cc6600"
+theme.taglist_fg_occupied = "#888888"
+theme.taglist_font = "FontAwesome bold 12.5"
+-- }}}
 
--- Display the taglist squares
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
+theme.notification_border_width = dpi(2)
+theme.notification_border_color = "#888888"
 
--- Variables set for theming the menu:
--- menu_[bg|fg]_[normal|focus]
--- menu_[border_color|border_width]
-theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
-theme.menu_height = 15
-theme.menu_width  = 100
-
+-- {{{ Widgets
 -- You can add as many variables as
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
+--theme.fg_widget        = "#AECF96"
+--theme.fg_center_widget = "#88A175"
+--theme.fg_end_widget    = "#FF5656"
+--theme.bg_widget        = "#494B4F"
+--theme.border_widget    = "#3F3F3F"
+-- }}}
 
--- Define the image to load
-theme.titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/default/titlebar/close_focus.png"
+-- {{{ Mouse finder
+theme.mouse_finder_color = "#CC9393"
+-- mouse_finder_[timeout|animate_timeout|radius|factor]
+-- }}}
 
-theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/default/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/ontop_focus_active.png"
+-- {{{ Menu
+-- Variables set for theming the menu:
+-- menu_[bg|fg]_[normal|focus]
+-- menu_[border_color|border_width]
+theme.menu_height = dpi(15)
+theme.menu_width  = dpi(100)
+-- }}}
 
-theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/default/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/sticky_focus_active.png"
+-- {{{ Icons
+-- {{{ Taglist
+--theme.taglist_squares_sel   = themes_path .. "zenburn/taglist/squarefz.png"
+--theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
+--theme.taglist_squares_resize = "false"
+-- }}}
 
-theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/default/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/floating_focus_active.png"
+-- {{{ Misc
+theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
+theme.menu_submenu_icon      = themes_path .. "default/submenu.png"
+-- }}}
 
-theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/default/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
+-- {{{ Layout
+theme.layout_tile       = themes_path .. "zenburn/layouts/tile.png"
+theme.layout_tileleft   = themes_path .. "zenburn/layouts/tileleft.png"
+theme.layout_tilebottom = themes_path .. "zenburn/layouts/tilebottom.png"
+theme.layout_tiletop    = themes_path .. "zenburn/layouts/tiletop.png"
+theme.layout_fairv      = themes_path .. "zenburn/layouts/fair.png"
+theme.layout_fairh      = themes_path .. "zenburn/layouts/fair.png"
+theme.layout_spiral     = themes_path .. "zenburn/layouts/spiral.png"
+theme.layout_dwindle    = themes_path .. "zenburn/layouts/spiral.png"
+theme.layout_max        = themes_path .. "zenburn/layouts/max.png"
+theme.layout_fullscreen = themes_path .. "zenburn/layouts/fullscreen.png"
+theme.layout_magnifier  = themes_path .. "zenburn/layouts/magnifier.png"
+theme.layout_floating   = themes_path .. "zenburn/layouts/floating.png"
+theme.layout_cornernw   = themes_path .. "zenburn/layouts/cornernw.png"
+theme.layout_cornerne   = themes_path .. "zenburn/layouts/cornerne.png"
+theme.layout_cornersw   = themes_path .. "zenburn/layouts/cornersw.png"
+theme.layout_cornerse   = themes_path .. "zenburn/layouts/cornerse.png"
+-- }}}
 
-theme.wallpaper = "/home/kyle/Pictures/space.png"
+-- {{{ Titlebar
+theme.titlebar_close_button_focus  = themes_path .. "zenburn/titlebar/titlebutton-close@2.png"
+theme.titlebar_close_button_normal = themes_path .. "zenburn/titlebar/close_normal.png"
 
--- You can use your own layout icons like this:
-theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
-theme.layout_fairv = "/usr/share/awesome/themes/default/layouts/fairvw.png"
-theme.layout_floating  = "/usr/share/awesome/themes/default/layouts/floatingw.png"
-theme.layout_magnifier = "/usr/share/awesome/themes/default/layouts/magnifierw.png"
-theme.layout_max = "/usr/share/awesome/themes/default/layouts/maxw.png"
-theme.layout_fullscreen = "/usr/share/awesome/themes/default/layouts/fullscreenw.png"
-theme.layout_tilebottom = "/usr/share/awesome/themes/default/layouts/tilebottomw.png"
-theme.layout_tileleft   = "/usr/share/awesome/themes/default/layouts/tileleftw.png"
-theme.layout_tile = "/usr/share/awesome/themes/default/layouts/tilew.png"
-theme.layout_tiletop = "/usr/share/awesome/themes/default/layouts/tiletopw.png"
-theme.layout_spiral  = "/usr/share/awesome/themes/default/layouts/spiralw.png"
-theme.layout_dwindle = "/usr/share/awesome/themes/default/layouts/dwindlew.png"
+theme.titlebar_minimize_button_normal = themes_path .. "default/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_focus  = themes_path .. "default/titlebar/minimize_focus.png"
 
-theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
+theme.titlebar_ontop_button_focus_active  = themes_path .. "zenburn/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active = themes_path .. "zenburn/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_inactive  = themes_path .. "zenburn/titlebar/ontop_focus_inactive2.png"
+theme.titlebar_ontop_button_normal_inactive = themes_path .. "zenburn/titlebar/ontop_normal_inactive.png"
 
--- Define the icon theme for application icons. If not set then the icons 
--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+theme.titlebar_sticky_button_focus_active  = themes_path .. "zenburn/titlebar/titlebutton-maximize@2.png"
+theme.titlebar_sticky_button_normal_active = themes_path .. "zenburn/titlebar/titlebutton-maximize@2.png"
+theme.titlebar_sticky_button_focus_inactive  = themes_path .. "zenburn/titlebar/titlebutton-maximize@2.png"
+theme.titlebar_sticky_button_normal_inactive = themes_path .. "zenburn/titlebar/titlebutton-maximize@2.png"
+
+theme.titlebar_floating_button_focus_active  = themes_path .. "zenburn/titlebar/titlebutton-close@2.png"
+theme.titlebar_floating_button_normal_active = themes_path .. "zenburn/titlebar/titlebutton-close@2.png"
+theme.titlebar_floating_button_focus_inactive  = themes_path .. "zenburn/titlebar/titlebutton-close@2.png"
+theme.titlebar_floating_button_normal_inactive = themes_path .. "zenburn/titlebar/floating_normal_inactive.png"
+
+theme.titlebar_maximized_button_focus_active  = themes_path .. "zenburn/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active = themes_path .. "zenburn/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_inactive  = themes_path .. "zenburn/titlebar/titlebutton-minimize@2.png"
+theme.titlebar_maximized_button_normal_inactive = themes_path .. "zenburn/titlebar/titlebutton-minimize@2.png"
+-- }}}
+-- }}}
 
 return theme
+
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
