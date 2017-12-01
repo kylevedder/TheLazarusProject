@@ -8,9 +8,11 @@ sudo apt -y install clang g++ qtbase5-dev cmake libpopt-dev \
     imagemagick cimg-dev kdevelop &&\
     sudo apt install libgtest0 libgtest-dev && \
     sudo apt install libgtest-dev  && \
+    cd /usr/src/gtest && \
     sudo mkdir build  && \
     sudo cmake ..  && \
     sudo make -j  && \
     sudo cp libgtest* /usr/lib/  && \
+    cd .. && \
     sudo rm -rf build/  && \
 
