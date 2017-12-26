@@ -1,7 +1,0 @@
-#!/bin/bash
-sudo add-apt-repository  ppa:klaus-vormweg/awesome -y
-sudo apt update
-sudo apt install -y awesome
-# ln -s source link_name
-ln -s ./awesome ~/.config/awesome
-cd ./awesome/lux && sudo make install && sudo lux

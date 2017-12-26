@@ -2,6 +2,7 @@ prepare-apt
 prepare-folders
 prepare-bash
 lubuntu
+awesome
 ssh
 git
 nvidia-drivers
