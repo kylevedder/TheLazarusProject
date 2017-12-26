@@ -9,7 +9,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = (awful.util.getdir("config") .. "/zenburn-background.png")
+theme.wallpaper = (awful.util.getdir("config") .. "/tpe.jpg")
 
 -- }}}
 

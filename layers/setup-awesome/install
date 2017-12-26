@@ -1,11 +1,7 @@
 #!/bin/bash
-sudo apt install -y awesome && (mkdir ~/bin > /dev/null 2>&1 || true) && \
-mkdir ~/.config/awesome && \
-cat rc.lua > ~/.config/awesome/rc.lua && \
-cat theme.lua > ~/.config/awesome/theme.lua && \
-cp *.png ~/.config/awesome/ && \
-cp -r battery-widget/ ~/.config/awesome/
-git clone https://github.com/Ventto/lux.git ~/.config/awesome/lux
-cd ~/.config/awesome/lux && sudo make install && sudo lux
-sudo chown `whoami` ~/.bash_history && \
-mkdir ~/code
+sudo add-apt-repository  ppa:klaus-vormweg/awesome -y
+sudo apt update
+sudo apt install -y awesome
+# ln -s source link_name
+ln -s ./awesome ~/.config/awesome
+cd ./awesome/lux && sudo make install && sudo lux
