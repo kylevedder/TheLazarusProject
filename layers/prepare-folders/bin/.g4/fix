@@ -1,0 +1,2 @@
+#!/bin/bash
+clang-format -style=Google -i *.cc *.h *.cpp 2> /dev/null
