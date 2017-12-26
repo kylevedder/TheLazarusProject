@@ -1,3 +1,4 @@
 #!/bin/bash
-ln -s ./bin ~/bin
+ln -s `pwd`/bin ~/bin
 mkdir ~/code > /dev/null 2>&1
+exit 0

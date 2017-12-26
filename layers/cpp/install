@@ -6,13 +6,12 @@ sudo apt -y install clang g++ qtbase5-dev cmake libpopt-dev \
     libblas-dev liblapack-dev libopenmpi-dev build-essential\
     qt4-default libqt4-dev qt4-dev-tools libiomp-dev clang-format whiptail\
     imagemagick cimg-dev kdevelop &&\
-    sudo apt install libgtest0 libgtest-dev && \
     sudo apt install libgtest-dev  && \
     cd /usr/src/gtest && \
     sudo mkdir build  && \
+    cd build && \
     sudo cmake ..  && \
     sudo make -j  && \
     sudo cp libgtest* /usr/lib/  && \
     cd .. && \
-    sudo rm -rf build/  && \
-
+    sudo rm -rf build/

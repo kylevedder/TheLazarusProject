@@ -2,4 +2,5 @@
 sudo apt -y install emacs
 rm ~/.emacs > /dev/null 2>&1
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-ln -s ./.spacemacs ~/.spacemacs
+ln -s `pwd`/.spacemacs ~/.spacemacs
+exit 0

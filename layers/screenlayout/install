@@ -1,2 +1,3 @@
 #!/bin/bash
-ln -s ./.screenlayout ~/.screenlayout
+ln -s `pwd`/.screenlayout/ ~/.screenlayout
+exit 0
