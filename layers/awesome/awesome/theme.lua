@@ -9,16 +9,16 @@ local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = (awful.util.getdir("config") .. "/tpe.jpg")
+theme.wallpaper = (awful.util.getdir("config") .. "/california.jpg")
 
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Roboto Mono Medium  11"
+theme.font      = "DejaVu Sans Mono Bold 11"
 
 -- {{{ Colors
-theme.fg_normal  = "#DCDCCC"
-theme.fg_focus   = "#F0DFAF"
+theme.fg_normal  = "#F0DFAF"
+theme.fg_focus   = "#DCDCCC"
 theme.fg_urgent  = "#CC9393"
 theme.bg_normal  = "#3F3F3F"
 theme.bg_focus   = "#1E2320"
@@ -50,7 +50,7 @@ theme.titlebar_bg_normal = "#3F3F3F"
 theme.taglist_fg_empty = "#555555"
 theme.taglist_fg_focus = "#cc6600"
 theme.taglist_fg_occupied = "#888888"
-theme.taglist_font = "FontAwesome bold 12.5"
+theme.taglist_font = "Monospace Bold 14"
 -- }}}
 
 theme.notification_border_width = dpi(2)
