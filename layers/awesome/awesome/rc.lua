@@ -50,7 +50,7 @@ end
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal"
+terminal = "lxterminal"
 editor = os.getenv("EDITOR") or "emacs"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -341,7 +341,7 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, "Shift"   }, "f",      function ()  awful.util.spawn_with_shell("nautilus") end,
+    awful.key({ modkey, "Shift"   }, "f",      function ()  awful.util.spawn_with_shell("pcmanfm") end,
               {description = "open a file manager", group = "launcher"}),
     awful.key({                   }, "Print",  function () awful.util.spawn("scrot", false)  end,
               {description = "screenshot", group = "awesome"}),
@@ -374,9 +374,9 @@ globalkeys = gears.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
-    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell("lux -m 30 -M 600 -s 30")  end,
+    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell("lux -m 1 -M 600 -s 15")  end,
               {description = "decrease brightness", group = "client"}),
-    awful.key({                   }, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell("lux -m 30 -M 600 -a 30")  end,
+    awful.key({                   }, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell("lux -m 1 -M 600 -a 15")  end,
               {description = "increase brightness", group = "client"}),
     awful.key({                   }, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer -D pulse -q sset Master 3%- unmute")  end,
               {description = "decrease volume", group = "client"}),
