@@ -13,11 +13,12 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
--- Battery library
-local battery_widget = require("battery-widget")
 
 -- Load Debian menu entries
 local debian = require("debian.menu")
+
+local lain = require("lain")
+local markup = lain.util.markup
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -69,12 +70,12 @@ awful.layout.layouts = {
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.max,
+    -- awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
+    -- awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -124,9 +125,49 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("  %a %b %e, %l:%M %P %Z (%z GMT)  ")
+clockicon = wibox.widget.imagebox(beautiful.widget_clock)
+--mytextclock = wibox.widget.textclock("  %a %b %e, %l:%M %P %Z (%z GMT)  ")
+mytextclock = wibox.widget.textclock(markup("#FFFFFF", "%A %d %B ") .. markup("#777777", ">") .. markup("#FFFFFF", " %H:%M "))
 
-battery = battery_widget({adapter = "BAT0"})
+local netdownicon = wibox.widget.imagebox(beautiful.widget_netdown)
+local netdowninfo = wibox.widget.textbox()
+local netupicon = wibox.widget.imagebox(beautiful.widget_netup)
+local netupinfo = lain.widget.net({
+    settings = function()
+        widget:set_markup(markup.fontfg(beautiful.font, "#FF0000", net_now.sent .. " "))
+        netdowninfo:set_markup(markup.fontfg(beautiful.font, "#00FF00", net_now.received .. " "))
+    end
+})
+
+-- Battery
+local baticon = wibox.widget.imagebox(beautiful.widget_batt)
+local bat = lain.widget.bat({
+    settings = function()
+        local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
+
+        if bat_now.ac_status == 1 then
+            perc = perc .. " plug"
+        end
+
+        widget:set_markup(markup.fontfg(beautiful.font, "#FFFFFF", perc .. " "))
+    end
+})
+
+-- CPU
+local cpuicon = wibox.widget.imagebox(beautiful.widget_cpu)
+local cpu = lain.widget.cpu({
+    settings = function()
+        widget:set_markup(markup.fontfg(beautiful.font, beautiful.cpu_color, cpu_now.usage .. "% "))
+    end
+})
+
+-- MEM
+local memicon = wibox.widget.imagebox(beautiful.widget_mem)
+local memory = lain.widget.mem({
+    settings = function()
+        widget:set_markup(markup.fontfg(beautiful.font, "#e0da37", mem_now.used .. "M "))
+    end
+})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -224,10 +265,19 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             wibox.widget.systray(),
+	    netdownicon,
+            netdowninfo,
+            netupicon,
+            netupinfo.widget,
+	    cpuicon,
+	    cpu.widget,
+	    memicon,
+	    memory,
+	    clockicon,
             mytextclock,
-            battery.widget,
+	    baticon,
+            bat.widget,
             s.mylayoutbox,
         },
     }
