@@ -127,7 +127,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 clockicon = wibox.widget.imagebox(beautiful.widget_clock)
 --mytextclock = wibox.widget.textclock("  %a %b %e, %l:%M %P %Z (%z GMT)  ")
-mytextclock = wibox.widget.textclock(markup("#FFFFFF", "%A %d %B ") .. markup("#777777", ">") .. markup("#FFFFFF", " %H:%M "))
+mytextclock = wibox.widget.textclock(markup("#00FF00", "%A %d %B ") .. markup("#007700", ">") .. markup("#00FF00", " %H:%M "))
 
 local netdownicon = wibox.widget.imagebox(beautiful.widget_netdown)
 local netdowninfo = wibox.widget.textbox()
@@ -149,7 +149,7 @@ local bat = lain.widget.bat({
             perc = perc .. " plug"
         end
 
-        widget:set_markup(markup.fontfg(beautiful.font, "#FFFFFF", perc .. " "))
+        widget:set_markup(markup.fontfg(beautiful.font, "#00FF00", perc .. " "))
     end
 })
 
@@ -165,7 +165,7 @@ local cpu = lain.widget.cpu({
 local memicon = wibox.widget.imagebox(beautiful.widget_mem)
 local memory = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.fontfg(beautiful.font, "#e0da37", mem_now.used .. "M "))
+        widget:set_markup(markup.fontfg(beautiful.font, beautiful.memory_color, mem_now.used .. "M "))
     end
 })
 

@@ -11,7 +11,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 -- {{{ Main
 local theme = {}
 theme.confdir = awful.util.getdir("config")
-theme.wallpaper = (theme.confdir .. "/cyberpunk2.png")
+theme.wallpaper = (theme.confdir .. "/black.png")
 
 -- }}}
 
@@ -19,11 +19,11 @@ theme.wallpaper = (theme.confdir .. "/cyberpunk2.png")
 theme.font      = "xos4 Terminus 9"
 
 -- {{{ Colors
-theme.fg_normal  = "#AAAAAA"
-theme.fg_focus   = "#FFFFFF"
+theme.fg_normal  = "#00AA00"
+theme.fg_focus   = "#00FF00"
 theme.fg_urgent  = "#FF0000"
 theme.bg_normal  = "#000000"
-theme.bg_focus   = "#222222"
+theme.bg_focus   = "#002200"
 theme.bg_urgent  = "#550000"
 theme.bg_systray = theme.bg_normal
 -- }}}
@@ -32,7 +32,7 @@ theme.bg_systray = theme.bg_normal
 --theme.useless_gap   = dpi(8)
 theme.border_width  = dpi(2)
 theme.border_normal = "#000000"
-theme.border_focus  = "#222222"
+theme.border_focus  = "#002200"
 theme.border_marked = "#000000"
 -- }}}
 
@@ -50,8 +50,8 @@ theme.titlebar_bg_normal = "#FF0000"
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- Example:
 theme.taglist_fg_empty = "#555555"
-theme.taglist_fg_focus = "#FFFFFF"
-theme.taglist_fg_occupied = "#888888"
+theme.taglist_fg_focus = "#00FF00"
+theme.taglist_fg_occupied = "#008800"
 theme.taglist_font = "fixed"
 -- }}}
 
@@ -68,9 +68,9 @@ theme.notification_border_color = "#888888"
 --theme.bg_widget        = "#494B4F"
 --theme.border_widget    = "#3F3F3F"
 -- }}}
-theme.cpu_color = "#FF0000"
+theme.cpu_color = "#00FF00"
 theme.temp_color = "#FF0000"
-theme.memory_color = "#FF0000"
+theme.memory_color = "#e0da37"
 
 -- {{{ Mouse finder
 theme.mouse_finder_color = "#CC9393"
