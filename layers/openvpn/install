@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install curl && \
+sudo apt -y install curl && \
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh && \
 sudo bash pia-nm.sh && \
 sudo apt -y install network-manager-openvpn-gnome && \
