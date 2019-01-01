@@ -16,7 +16,7 @@ theme.wallpaper = (theme.confdir .. "/black.png")
 -- }}}
 
 -- {{{ Styles
-theme.font      = "xos4 Terminus 9"
+theme.font      = "Perfect DOS VGA 437 12"
 
 -- {{{ Colors
 theme.fg_normal  = "#00AA00"
@@ -52,7 +52,7 @@ theme.titlebar_bg_normal = "#FF0000"
 theme.taglist_fg_empty = "#555555"
 theme.taglist_fg_focus = "#00FF00"
 theme.taglist_fg_occupied = "#008800"
-theme.taglist_font = "fixed"
+theme.taglist_font = "Perfect DOS VGA 437 12"
 -- }}}
 
 theme.notification_border_width = dpi(2)
