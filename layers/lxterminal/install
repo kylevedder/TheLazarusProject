@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo apt install lxterminal
+rm ~/.config/lxterminal/lxterminal.conf
+ln -s `pwd`/lxterminal.conf ~/.config/lxterminal/lxterminal.conf
+exit 0

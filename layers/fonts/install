@@ -1,5 +1,5 @@
 #!/bin/bash
 mkdir ~/.local/share/fonts/ || true
-ln -s `pwd`/ttf ~/.local/share/fonts/ttf
+ln -s `pwd`/ttf ~/.local/share/fonts
 fc-cache -f -v
 exit 0
