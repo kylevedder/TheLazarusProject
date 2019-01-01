@@ -3,4 +3,5 @@ touch ~/.bash_history
 sudo chown `whoami` ~/.bash_history
 rm ~/.bashrc
 ln -s `pwd`/.bashrc ~/.bashrc
+ln -s `pwd`/.bash_aliases ~/.bash_aliases
 exit 0
