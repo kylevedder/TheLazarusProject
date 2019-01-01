@@ -1,0 +1,5 @@
+#!/bin/bash
+mkdir ~/.local/share/fonts/ || true
+ln -s `pwd`/ttf ~/.local/share/fonts/ttf
+fc-cache -f -v
+exit 0

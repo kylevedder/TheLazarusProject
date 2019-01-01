@@ -31,7 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     rust
+     javascript
+     go
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -40,7 +41,9 @@ values."
 
      ;; Programming Languages
      c-c++
-     ;; python
+     python
+     rust
+     ocaml
      emacs-lisp
      sql
      ;; javascript
@@ -346,7 +349,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (spinner parent-mode flyspell-correct pos-tip flx anzu undo-tree pkg-info bind-map bind-key auto-complete popup toml-mode racer flycheck-rust cargo rust-mode powerline hydra helm helm-core projectile swiper packed async yasnippet anaconda-mode dash-functional company iedit smartparens highlight evil goto-chg flycheck epl ivy avy markdown-mode pythonic f s dash noflet ensime sbt-mode scala-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode haml-mode emmet-mode company-web web-completion-data company-auctex auctex-latexmk auctex web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode lua-mode yapfify yaml-mode ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org stickyfunc-enhance srefactor sql-indent spaceline smex restart-emacs request rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text mmm-mode markdown-toc macrostep lorem-ipsum live-py-mode linum-relative link-hint ivy-hydra info+ indent-guide hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gh-md fuzzy flyspell-correct-ivy flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump disaster diminish define-word cython-mode csv-mode counsel-projectile counsel company-statistics company-c-headers company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
+    (go-guru go-eldoc company-go go-mode utop tuareg caml ocp-indent merlin spinner parent-mode flyspell-correct pos-tip flx anzu undo-tree pkg-info bind-map bind-key auto-complete popup toml-mode racer flycheck-rust cargo rust-mode powerline hydra helm helm-core projectile swiper packed async yasnippet anaconda-mode dash-functional company iedit smartparens highlight evil goto-chg flycheck epl ivy avy markdown-mode pythonic f s dash noflet ensime sbt-mode scala-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode haml-mode emmet-mode company-web web-completion-data company-auctex auctex-latexmk auctex web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode lua-mode yapfify yaml-mode ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org stickyfunc-enhance srefactor sql-indent spaceline smex restart-emacs request rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text mmm-mode markdown-toc macrostep lorem-ipsum live-py-mode linum-relative link-hint ivy-hydra info+ indent-guide hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gh-md fuzzy flyspell-correct-ivy flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump disaster diminish define-word cython-mode csv-mode counsel-projectile counsel company-statistics company-c-headers company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

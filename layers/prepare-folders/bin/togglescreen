@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+import subprocess
+
+stdoutdata = subprocess.getoutput("xrandr --query")
+raw_connected = [l for l in stdoutdata.split("\n") if " connected" in l]
+enabled = [l for l in raw_connected if "mm" in l]
+
+# print("Connected")
+# for l in raw_connected:
+#     print(l)
+
+# print("Enabled")
+# for l in enabled:
+#     print(l)
+
+if len(raw_connected) == 3 and len(enabled) == 1:
+    print("Laptop to multi")
+    print(subprocess.getoutput("~/.screenlayout/dual-monitor.sh"))
+
+elif len(raw_connected) == 3 and len(enabled) == 3:
+    print("Multi to laptop")
+    print(subprocess.getoutput("~/.screenlayout/laptop-only-dual.sh"))
+else:
+    print("Unhandled case: Connected:", len(raw_connected), "Enabled:", len(enabled))
+    exit(-1)
+
+
+print("Done")

@@ -1,15 +1,1 @@
-prepare-apt
-prepare-folders
-prepare-bash
-awesome
-lubuntu
-redshift
-screenlayout
-ssh
-git
-latex
-openvpn
-python-scientific
-cpp
-image-video
-tools
+emacs
