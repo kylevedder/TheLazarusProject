@@ -16,7 +16,7 @@ theme.wallpaper = (theme.confdir .. "/black.png")
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Perfect DOS VGA 437 12"
+theme.font      = "PxPlus IBM VGA8 12"
 
 -- {{{ Colors
 theme.fg_normal  = "#00AA00"
@@ -52,7 +52,7 @@ theme.titlebar_bg_normal = "#FF0000"
 theme.taglist_fg_empty = "#555555"
 theme.taglist_fg_focus = "#00FF00"
 theme.taglist_fg_occupied = "#008800"
-theme.taglist_font = "Perfect DOS VGA 437 12"
+theme.taglist_font = "PxPlus IBM VGA8 12"
 -- }}}
 
 theme.notification_border_width = dpi(2)
@@ -69,8 +69,12 @@ theme.notification_border_color = "#888888"
 --theme.border_widget    = "#3F3F3F"
 -- }}}
 theme.cpu_color = "#00FF00"
-theme.temp_color = "#FF0000"
-theme.memory_color = "#e0da37"
+theme.up_color = "#00FF00"
+theme.down_color = "#00FF00"
+-- theme.memory_color = "#e0da37"
+theme.memory_color = "#00FF00"
+theme.battery_color = "#00FF00"
+theme.date_color = "#00FF00"
 
 -- {{{ Mouse finder
 theme.mouse_finder_color = "#CC9393"

@@ -1,4 +1,5 @@
 -- Standard awesome library
+local common = require("awful.widget.common")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
@@ -126,16 +127,22 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 clockicon = wibox.widget.imagebox(beautiful.widget_clock)
---mytextclock = wibox.widget.textclock("  %a %b %e, %l:%M %P %Z (%z GMT)  ")
-mytextclock = wibox.widget.textclock(markup("#00FF00", "%A %d %B ") .. markup("#007700", ">") .. markup("#00FF00", " %H:%M "))
+-- mytextclock = wibox.widget.textclock("  %a %b %e, %l:%M %P %Z (%z GMT)  ")
+-- mytextclock = wibox.widget.textclock(markup("#00FF00", "%A %d %B ") .. markup("#007700", ">") .. markup("#00FF00", " %H:%M "))
+-- https://jeffkayser.com/projects/date-format-string-composer/index.html
+mytextclock = wibox.widget.textclock(markup(beautiful.date_color, "| %a %d %b %H:%M"))
 
 local netdownicon = wibox.widget.imagebox(beautiful.widget_netdown)
-local netdowninfo = wibox.widget.textbox()
+-- local netdowninfo = wibox.widget.textbox()
+local netdowninfo = lain.widget.net({
+    settings = function()
+      widget:set_markup(markup.fontfg(beautiful.font, beautiful.down_color, " | Dn: " .. net_now.received))
+    end
+})
 local netupicon = wibox.widget.imagebox(beautiful.widget_netup)
 local netupinfo = lain.widget.net({
     settings = function()
-        widget:set_markup(markup.fontfg(beautiful.font, "#FF0000", net_now.sent .. " "))
-        netdowninfo:set_markup(markup.fontfg(beautiful.font, "#00FF00", net_now.received .. " "))
+        widget:set_markup(markup.fontfg(beautiful.font, beautiful.up_color, " | Up: " .. net_now.sent))
     end
 })
 
@@ -143,13 +150,13 @@ local netupinfo = lain.widget.net({
 local baticon = wibox.widget.imagebox(beautiful.widget_batt)
 local bat = lain.widget.bat({
     settings = function()
-        local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
+        local perc = bat_now.perc ~= "N/A" and  bat_now.perc .. "%" or bat_now.perc
 
         if bat_now.ac_status == 1 then
             perc = perc .. " plug"
         end
 
-        widget:set_markup(markup.fontfg(beautiful.font, "#00FF00", perc .. " "))
+        widget:set_markup(markup.fontfg(beautiful.font, beautiful.battery_color, " | Bat: " .. perc .. " "))
     end
 })
 
@@ -157,7 +164,7 @@ local bat = lain.widget.bat({
 local cpuicon = wibox.widget.imagebox(beautiful.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.fontfg(beautiful.font, beautiful.cpu_color, cpu_now.usage .. "% "))
+        widget:set_markup(markup.fontfg(beautiful.font, beautiful.cpu_color, " | CPU: " .. cpu_now.usage .. "%"))
     end
 })
 
@@ -165,7 +172,7 @@ local cpu = lain.widget.cpu({
 local memicon = wibox.widget.imagebox(beautiful.widget_mem)
 local memory = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.fontfg(beautiful.font, beautiful.memory_color, mem_now.used .. "M "))
+        widget:set_markup(markup.fontfg(beautiful.font, beautiful.memory_color, " | Mem: " .. mem_now.used .. "M "))
     end
 })
 
@@ -248,7 +255,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
+    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons, {}, nil)
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -258,7 +265,7 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            --mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
@@ -266,17 +273,17 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-	    netdownicon,
-            netdowninfo,
-            netupicon,
+            -- netdownicon,
+            netdowninfo.widget,
+            -- netupicon,
             netupinfo.widget,
-	    cpuicon,
-	    cpu.widget,
-	    memicon,
-	    memory,
-	    clockicon,
+            -- cpuicon,
+            cpu.widget,
+            -- memicon,
+            memory,
+            -- clockicon,
             mytextclock,
-	    baticon,
+            -- baticon,
             bat.widget,
             s.mylayoutbox,
         },
