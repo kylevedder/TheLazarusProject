@@ -1,4 +1,5 @@
 #!/bin/bash
 ln -s `pwd`/bin ~/bin
 mkdir ~/code > /dev/null 2>&1
+sudo apt install lolcat cowsay jq
 exit 0
