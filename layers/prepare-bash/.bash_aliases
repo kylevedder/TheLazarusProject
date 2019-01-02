@@ -12,3 +12,8 @@ alias e="emacs"
 alias et="emacst"
 alias f="fmacs"
 alias ft="fmacst"
+
+btc() {
+  BTC_VALUE=$(curl -s https://api.cryptonator.com/api/ticker/BTC-USD | jq .ticker.price | sed 's/"//g')
+  printf "%.2f\n" $BTC_VALUE  
+}
