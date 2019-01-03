@@ -115,4 +115,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias sudo='sudo '
+
