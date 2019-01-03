@@ -25,3 +25,7 @@ Once The Lazarus Project is installed, select the desired layers in `lazarus.lay
 ```
 ./run_me.py
 ```
+
+# Layers
+
+Layers are referred to by their folder name, and a layer is installed by running the `install` script inside of it. Each of these scripts are self contained, and thus can be written in a variety of scripting languages.
