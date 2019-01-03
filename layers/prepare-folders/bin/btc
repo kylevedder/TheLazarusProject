@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "$%.2f\n" `curl -s https://api.cryptonator.com/api/ticker/BTC-USD |jq .ticker.price | sed 's/"//g'`
