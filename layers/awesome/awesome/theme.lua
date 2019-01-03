@@ -11,7 +11,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 -- {{{ Main
 local theme = {}
 theme.confdir = awful.util.getdir("config")
-theme.wallpaper = (theme.confdir .. "/black.png")
+theme.wallpaper = (theme.confdir .. "/cyberpunk_city.jpg")
 
 -- }}}
 
