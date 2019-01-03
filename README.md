@@ -28,4 +28,4 @@ Once The Lazarus Project is installed, select the desired layers in `lazarus.lay
 
 # Layers
 
-Layers are referred to by their folder name, and a layer is installed by running the `install` script inside of it. Each of these scripts are self contained, and thus can be written in a variety of scripting languages.
+Layers are stored inside `layers/` and are referred to by their folder name. A layer is installed by running the `install` script immeditely inside of its containing folder. Each of these `install` scripts are self contained, and thus can be written in a variety of scripting languages.
