@@ -12,6 +12,12 @@ or
 wget -qO- tinyurl.com/TheLazarusProject | bash
 ```
 
+or
+
+```
+wget -qO- https://raw.githubusercontent.com/kylevedder/TheLazarusProject/master/easy_install.sh | bash
+```
+
 This should work on all fresh Ubuntu systems with no prior dependencies. Tested on 18.04 LTS and 16.04 LTS.
 
 Once The Lazarus Project is installed, select the desired layers in `lazarus.layers`, and then run the installer with:
