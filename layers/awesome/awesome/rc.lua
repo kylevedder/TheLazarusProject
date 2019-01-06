@@ -648,3 +648,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Add wifi menu.
 awful.util.spawn("nm-applet")
+
+-- Fix giant icon.
+naughty.config.defaults['icon_size'] = 100
