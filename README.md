@@ -26,6 +26,12 @@ Once The Lazarus Project is installed, select the desired layers in `lazarus.lay
 ./run_me.py
 ```
 
+Optionally, to update the repo to use SSH instead of HTTPS, run:
+
+```
+./update_remote_to_ssh.sh
+```
+
 # Layers
 
 Layers are stored inside `layers/` and are referred to by their folder name. A layer is installed by running the `install` script immeditely inside of its containing folder. Each of these `install` scripts are self contained, and thus can be written in a variety of scripting languages.
