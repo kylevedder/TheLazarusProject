@@ -17,7 +17,7 @@ if len(raw_connected) == 3 and len(enabled) == 1:
     print("Laptop to multi")
     print(subprocess.getoutput("~/.screenlayout/dual-monitor.sh"))
 
-elif len(raw_connected) == 3 and len(enabled) == 3:
+elif len(raw_connected) == 3 and len(enabled) == 2:
     print("Multi to laptop")
     print(subprocess.getoutput("~/.screenlayout/laptop-only-dual.sh"))
 else:
