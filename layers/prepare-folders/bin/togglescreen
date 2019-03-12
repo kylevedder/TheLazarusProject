@@ -16,10 +16,12 @@ enabled = [l for l in raw_connected if "mm" in l]
 if len(raw_connected) == 3 and len(enabled) == 1:
     print("Laptop to multi")
     print(subprocess.getoutput("~/.screenlayout/dual-monitor.sh"))
-
 elif len(raw_connected) == 3 and len(enabled) == 2:
     print("Multi to laptop")
     print(subprocess.getoutput("~/.screenlayout/laptop-only-dual.sh"))
+elif len(raw_connected) == 1 and len(enabled) == 1:
+    print("Single screen laptop")
+    print(subprocess.getoutput("~/.screenlayout/laptop-only.sh"))
 else:
     print("Unhandled case: Connected:", len(raw_connected), "Enabled:", len(enabled))
     exit(-1)
