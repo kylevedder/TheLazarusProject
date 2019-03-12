@@ -31,9 +31,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     typescript
-     javascript
-     go
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -44,10 +41,12 @@ values."
      c-c++
      python
      rust
-     ocaml
+     ;; ocaml
      emacs-lisp
      sql
+     ;; typescript
      ;; javascript
+     go
      lua
      scala
 
