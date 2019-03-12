@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo add-apt-repository  ppa:klaus-vormweg/awesome -y
 sudo apt update
-sudo apt install -y awesome
+sudo apt install -y awesome make
 mkdir -p ~/Pictures/screenshots/
 ln -s `pwd`/awesome ~/.config/awesome
 ln -s `pwd`/Xmodmap ~/.Xmodmap

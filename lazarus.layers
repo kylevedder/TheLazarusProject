@@ -2,13 +2,13 @@ prepare-apt
 prepare-bash
 prepare-folders
 lubuntu
+fonts
 lxterminal
-openvpn
 screenlayout
+openvpn
 ssh
 tools
-fonts
-git
+git-credentials
 awesome
 cpp
 latex
