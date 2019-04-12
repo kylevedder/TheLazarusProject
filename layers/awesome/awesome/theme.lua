@@ -5,13 +5,23 @@
 ------------------------------------------------
 local awful = require("awful")
 local lain  = require("lain")
+local gears = require("gears")
 local themes_path = require("gears.filesystem").get_themes_dir()
 local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
 local theme = {}
 theme.confdir = awful.util.getdir("config")
-theme.wallpaper = (theme.confdir .. "/cyberpunk_city.jpg")
+theme.wallpaper = function(s)
+  local w = tonumber(s.geometry.width)
+  local h = tonumber(s.geometry.height)
+  if w < h then
+    -- Vertical
+    return (theme.confdir .. "/hughes_fair.jpg")
+  end
+  -- Horizontal
+  return (theme.confdir .. "/horizons_horizontal.jpg")
+end
 
 -- }}}
 
