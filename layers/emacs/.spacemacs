@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     (python :variables python-enable-yapf-format-on-save t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -39,7 +40,7 @@ values."
 
      ;; Programming Languages
      c-c++
-     python
+     ;; python
      rust
      ;; ocaml
      emacs-lisp
@@ -325,6 +326,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (require 'yasnippet)
   (require 'magit)
+  (setq-default python-indent-offset 4)
   )
 
 (defun dotspacemacs/user-config ()
