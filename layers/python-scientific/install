@@ -1,2 +1,4 @@
 #!/bin/bash
-sudo apt -y install python3-numpy python3-scipy python3-matplotlib python3-pip
+sudo apt -y install python3-numpy python3-scipy python3-matplotlib python3-pip python-pip && \
+pip install pylint flake8 autoflake isort && \
+pip3 install pylint flake8 autoflake isort
