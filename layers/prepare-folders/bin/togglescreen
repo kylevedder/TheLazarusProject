@@ -13,7 +13,7 @@ enabled = [l for l in raw_connected if "mm" in l]
 # for l in enabled:
 #     print(l)
 
-if len(raw_connected) == 3 and len(enabled) == 1:
+if len(raw_connected) == 3 and (len(enabled) == 1 or len(enabled) == 3):
     print("Laptop to multi")
     print(subprocess.getoutput("~/.screenlayout/dual-monitor.sh"))
 elif len(raw_connected) == 3 and len(enabled) == 2:
