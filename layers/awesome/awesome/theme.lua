@@ -17,32 +17,32 @@ theme.wallpaper = function(s)
   local h = tonumber(s.geometry.height)
   if w < h then
     -- Vertical
-    return (theme.confdir .. "/hughes_fair.jpg")
+    return (theme.confdir .. "/black.png")
   end
   -- Horizontal
-  return (theme.confdir .. "/horizons_horizontal.jpg")
+  return (theme.confdir .. "/black.png")
 end
 
 -- }}}
 
 -- {{{ Styles
-theme.font      = "PxPlus IBM VGA8 12"
+theme.font      = "Iosevka 10"
 
 -- {{{ Colors
-theme.fg_normal  = "#00AA00"
-theme.fg_focus   = "#00FF00"
+theme.fg_normal  = "#FFFFFF"
+theme.fg_focus   = "#FFFFFF"
 theme.fg_urgent  = "#FF0000"
 theme.bg_normal  = "#000000"
-theme.bg_focus   = "#002200"
+theme.bg_focus   = "#222222"
 theme.bg_urgent  = "#550000"
 theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
-theme.useless_gap   = dpi(8)
-theme.border_width  = dpi(2)
-theme.border_normal = "#000000"
-theme.border_focus  = "#002200"
+theme.useless_gap   = dpi(0)
+theme.border_width  = dpi(1)
+theme.border_normal = "#888888"
+theme.border_focus  = "#FFFFFF"
 theme.border_marked = "#000000"
 -- }}}
 
@@ -60,13 +60,13 @@ theme.titlebar_bg_normal = "#FF0000"
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- Example:
 theme.taglist_fg_empty = "#555555"
-theme.taglist_fg_focus = "#00FF00"
-theme.taglist_fg_occupied = "#008800"
-theme.taglist_font = "PxPlus IBM VGA8 12"
+theme.taglist_fg_focus = "#FFFFFF"
+theme.taglist_fg_occupied = "#888888"
+theme.taglist_font = "Iosevka 10"
 -- }}}
 
 theme.notification_border_width = dpi(2)
-theme.notification_border_color = "#888888"
+theme.notification_border_color = "#FFFFFF"
 
 -- {{{ Widgets
 -- You can add as many variables as
@@ -78,13 +78,13 @@ theme.notification_border_color = "#888888"
 --theme.bg_widget        = "#494B4F"
 --theme.border_widget    = "#3F3F3F"
 -- }}}
-theme.cpu_color = "#00FF00"
-theme.up_color = "#00FF00"
-theme.down_color = "#00FF00"
+theme.cpu_color = "#FFFFFF"
+theme.up_color = "#FFFFFF"
+theme.down_color = "#FFFFFF"
 -- theme.memory_color = "#e0da37"
-theme.memory_color = "#00FF00"
-theme.battery_color = "#00FF00"
-theme.date_color = "#00FF00"
+theme.memory_color = "#FFFFFF"
+theme.battery_color = "#FFFFFF"
+theme.date_color = "#FFFFFF"
 
 -- {{{ Mouse finder
 theme.mouse_finder_color = "#CC9393"
