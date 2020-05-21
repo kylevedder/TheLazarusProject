@@ -13,11 +13,17 @@ enabled = [l for l in raw_connected if "mm" in l]
 # for l in enabled:
 #     print(l)
 
-if len(raw_connected) == 3 and (len(enabled) == 1 or len(enabled) == 3):
-    print("Laptop to multi")
+if len(raw_connected) == 4 and len(enabled) != 3:
+    print("Laptop to triple")
+    print(subprocess.getoutput("~/.screenlayout/triple-square.sh"))
+if len(raw_connected) == 4 and len(enabled) == 3:
+    print("Triple to laptop")
+    print(subprocess.getoutput("~/.screenlayout/laptop-only-triple.sh"))
+elif len(raw_connected) == 3 and (len(enabled) == 1 or len(enabled) == 3):
+    print("Laptop to dual")
     print(subprocess.getoutput("~/.screenlayout/dual-monitor.sh"))
 elif len(raw_connected) == 3 and len(enabled) == 2:
-    print("Multi to laptop")
+    print("dual to laptop")
     print(subprocess.getoutput("~/.screenlayout/laptop-only-dual.sh"))
 elif len(raw_connected) == 2 and len(enabled) == 2:
     print("Single to laptop")

@@ -1,0 +1,4 @@
+#!/bin/bash
+cd code/catkin_ws
+source devel/setup.bash
+~/clion-2019.2.4/bin/clion.sh &

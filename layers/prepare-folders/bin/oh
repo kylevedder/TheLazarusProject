@@ -1,0 +1,2 @@
+#!/bin/bash
+(pcmanfm `pwd` > /dev/null 2>&1 &)
