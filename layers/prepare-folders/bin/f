@@ -1,2 +1,3 @@
 #!/bin/bash
-($(which emacs) -q --load ~/.fmacs -q $@ &)
+pushd ~/code/ServiceRobotControlStack; ./ci/format_all.sh; popd
+
