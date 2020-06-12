@@ -256,15 +256,26 @@ local function is_vertical(s)
   return w < h
 end
 
+function tablelength(T)
+    local count = 0
+    for _ in pairs(T) do count = count + 1 end
+    return count
+end
+
 local function set_tags_and_layouts(s)
   -- Each screen has its own tag table.
   print("Layouts:")
   print(awful.layout.layouts)
+  print("Tags:")
+  print(tablelength(s.tags))
+  print("End tags")
   local layout = awful.layout.layouts[1]
   if is_vertical(s) then
     layout = awful.layout.layouts_vertical[1]
   end
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, layout)
+  if tablelength(s.tags) <= 0 then 
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, layout)
+  end
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
