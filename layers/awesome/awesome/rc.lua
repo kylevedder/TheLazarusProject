@@ -264,11 +264,6 @@ end
 
 local function set_tags_and_layouts(s)
   -- Each screen has its own tag table.
-  print("Layouts:")
-  print(awful.layout.layouts)
-  print("Tags:")
-  print(tablelength(s.tags))
-  print("End tags")
   local layout = awful.layout.layouts[1]
   if is_vertical(s) then
     layout = awful.layout.layouts_vertical[1]
