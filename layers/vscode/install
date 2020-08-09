@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo apt -y install software-properties-common apt-transport-https curl
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt -y install code
+mkdir -p ~/.config/Code/User
+ln -s `pwd`/settings.json ~/.config/Code/User/settings.json
+exit 0
