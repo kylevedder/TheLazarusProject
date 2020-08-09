@@ -1,4 +1,4 @@
 #!/bin/bash
 cd code/ServiceRobotControlStack/catkin_ws
 source devel/setup.bash
-~/clion-2020.1.1/bin/clion.sh &
+clion &
