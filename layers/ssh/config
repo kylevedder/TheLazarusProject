@@ -1,0 +1,35 @@
+Host aws-ec2-micro
+  User ubuntu
+  HostName 54.89.126.234
+  IdentityFile ~/.ssh/aws-ec2key.pem
+Host aws-ec2-medium
+  User ubuntu
+  HostName 54.152.117.85
+  IdentityFile ~/.ssh/aws-ec2key.pem
+Host lubuntu
+  User student
+  HostName localhost
+  Port 2048
+Host lml0
+  User lifelongml-penn0
+  HostName gpuworkstation.cis.upenn.edu
+Host klml0
+  User kyle
+  HostName gpuworkstation.cis.upenn.edu
+Host lml1
+  User lifelongml-penn1
+  HostName lifelongml1.cis.upenn.edu
+Host klml1
+  User kyle
+  HostName lifelongml1.cis.upenn.edu
+Host lml2
+  User lifelongml-penn2
+  HostName lifelongml2.cis.upenn.edu
+Host klml2
+  User kyle
+  HostName lifelongml2.cis.upenn.edu
+Host cis505
+  User cis505
+  HostName localhost
+  Port 2048
+
