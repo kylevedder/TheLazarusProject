@@ -1,4 +1,4 @@
 #!/bin/bash
-cd code/ServiceRobotControlStack/catkin_ws
+cd ~/code/ServiceRobotControlStack/catkin_ws
 source devel/setup.bash
 clion &

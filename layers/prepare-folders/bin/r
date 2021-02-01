@@ -1,0 +1,5 @@
+#!/bin/bash
+pushd ~/code/ServiceRobotControlStack/catkin_ws
+devel/lib/control_stack/nav_node src/control_stack/config/sim_config.lua $1
+popd
+

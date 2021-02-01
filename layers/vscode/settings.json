@@ -4,5 +4,12 @@
     "editor.fontFamily": "Iosevka, 'monospace', monospace, 'Droid Sans Fallback'",
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.largeFileOptimizations": false
+    "editor.largeFileOptimizations": false,
+    "workbench.colorTheme": "Default High Contrast",
+    "workbench.colorCustomizations": {
+        "editor.background": "#111111",
+        "editorLineNumber.foreground": "#AAAAAA",
+      },
+      "editor.tabSize": 2,
+      "workbench.editorAssociations": [],
 }

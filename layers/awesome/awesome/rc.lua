@@ -400,7 +400,7 @@ globalkeys = gears.table.join(
               {description = "screenshot specific area", group = "awesome"}),
     awful.key({ "Control", "Mod1" }, "l",      function () awful.util.spawn_with_shell("dm-tool lock")  end,
               {description = "lock screen", group = "awesome"}),
-    awful.key({ "Control", "Mod1" }, "s",      function () awful.util.spawn_with_shell("dm-tool lock && systemctl suspend")  end,
+    awful.key({ "Control", "Mod1" }, "s",      function () awful.util.spawn_with_shell("dm-tool lock")  end,
               {description = "suspend and lock screen", group = "awesome"}),
     awful.key({ "Control", "Mod1" }, "e",      function () awful.util.spawn_with_shell("lxsession-logout")  end,
               {description = "show shutdown options", group = "awesome"}),

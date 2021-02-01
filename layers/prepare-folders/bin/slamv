@@ -1,0 +1,13 @@
+#!/bin/bash
+pushd ~/code/rviz_hitl_slam_tool
+export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
+popd
+pushd ~/code/rviz_vectorize_button
+export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
+popd
+pushd ~/code/rviz_write_button
+export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
+popd
+pushd ~/code/nautilus
+nohup rviz -d slam_debug.rviz > /dev/null 2>&1 &
+popd

@@ -1,0 +1,7 @@
+#!/bin/bash
+pushd ~/code/ServiceRobotControlStack
+./rosbuild_ws/simulator/ut_multirobot_sim/bin/simulator --sim_config=rosbuild_ws/simulator/sim_config.lua &
+r $1
+killall simulator
+popd
+

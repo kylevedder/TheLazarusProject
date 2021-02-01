@@ -1,0 +1,5 @@
+#!/bin/bash
+pushd ~/code/ServiceRobotControlStack
+nohup rosrun rviz rviz -d rosbuild_ws/simulator/visualization.rviz > /dev/null 2>&1 &
+popd
+
