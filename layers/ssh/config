@@ -32,4 +32,17 @@ Host cis505
   User cis505
   HostName localhost
   Port 2048
-
+Host klt
+  User k
+  HostName 192.168.0.102
+  Port 22
+Host cluster
+  User kvedder
+  HostName kostas-ap.seas.upenn.edu 
+Host xavier
+  User k
+  HostName 192.168.0.107
+Host robot
+  User kyle
+  HostName 10.103.97.123
+  ForwardX11 yes

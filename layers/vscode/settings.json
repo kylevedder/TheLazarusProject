@@ -2,7 +2,6 @@
     "clangd.path": "/home/k/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/10.0.0/clangd_10.0.0/bin/clangd",
     "cmake.configureOnOpen": true,
     "editor.fontFamily": "Iosevka, 'monospace', monospace, 'Droid Sans Fallback'",
-    "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "editor.largeFileOptimizations": false,
     "workbench.colorTheme": "Default High Contrast",
@@ -11,5 +10,12 @@
         "editorLineNumber.foreground": "#AAAAAA",
       },
       "editor.tabSize": 2,
-      "workbench.editorAssociations": [],
+      "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+      },
+      "jupyter.askForKernelRestart": false,
+      "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+      },
 }

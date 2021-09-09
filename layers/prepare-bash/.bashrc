@@ -80,7 +80,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
-source /opt/ros/melodic/setup.bash
+#source /opt/ros/melodic/setup.bash
 
 # Eternal bash history.
 # ---------------------
@@ -128,19 +128,22 @@ export HISTFILE=~/.bash_eternal_history
 # http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/k/.mujoco/mujoco200/bin
+#export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/libGLEW.so
+
 #PATH="/home/k/anaconda3/bin:$PATH"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/home/k/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/home/k/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/home/k/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/home/k/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
+__conda_setup="$('/home/k/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/k/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/k/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/k/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
