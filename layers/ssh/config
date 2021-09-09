@@ -46,3 +46,6 @@ Host robot
   User kyle
   HostName 10.103.97.123
   ForwardX11 yes
+Host kdt
+  User k
+  HostName 192.168.0.106
