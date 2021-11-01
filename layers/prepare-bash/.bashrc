@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
-#source /opt/ros/melodic/setup.bash
+source /opt/ros/melodic/setup.bash > /dev/null 2>&1
 
 # Eternal bash history.
 # ---------------------
@@ -128,7 +128,7 @@ export HISTFILE=~/.bash_eternal_history
 # http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/k/.mujoco/mujoco200/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin
 #export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/libGLEW.so
 
 #PATH="/home/k/anaconda3/bin:$PATH"
@@ -146,4 +146,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PM_PACKAGES_ROOT=$HOME/packman-repo
 

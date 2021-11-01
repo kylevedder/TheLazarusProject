@@ -392,7 +392,7 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, "Shift"   }, "f",      function ()  awful.util.spawn_with_shell("pcmanfm") end,
+    awful.key({ modkey, "Shift"   }, "f",      function ()  awful.util.spawn_with_shell("nautilus") end,
               {description = "open a file manager", group = "launcher"}),
     awful.key({                   }, "Print",  function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/screenshots/'", false)  end,
               {description = "screenshot", group = "awesome"}),
