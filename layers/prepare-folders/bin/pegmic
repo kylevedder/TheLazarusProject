@@ -1,2 +1,0 @@
-#!/bin/bash
-while true; do amixer set Capture 100%+; sleep 0.1; done
