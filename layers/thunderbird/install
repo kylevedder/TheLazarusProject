@@ -1,6 +1,0 @@
-#!/bin/bash
-sudo apt -y install thunderbird
-whiptail --title "Thunderbird Setup" --msgbox "Thunderbird will open shortly. As soon as it opens, close it. Hit OK to continue." 8 78
-thunderbird
-whiptail --title "Thunderbird Setup" --msgbox "Place Thunderbird data inside '~/.thunderbird/'. Hit OK to continue when done." 8 78
-exit

@@ -9,7 +9,6 @@
         "editor.background": "#111111",
         "editorLineNumber.foreground": "#AAAAAA",
       },
-      "editor.tabSize": 2,
       "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
       },
@@ -19,4 +18,16 @@
         "jupyter-notebook": "left"
       },
       "editor.inlineSuggest.enabled": true,
+      "cSpell.userWords": [
+        "asarray",
+        "astype",
+        "denormalize",
+        "dtype",
+        "idxes",
+        "idxs",
+        "imshow",
+        "intrinsics",
+        "robonet"
+      ],
+      "nvidia-smi.drawtype": "circledigit",
 }

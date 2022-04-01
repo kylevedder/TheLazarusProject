@@ -1,5 +1,5 @@
 #!/bin/bash
 mkdir ~/.ssh > /dev/null 2>&1
 ln -s `pwd`/config ~/.ssh/config
-whiptail --title "SSH Key Setup" --msgbox "Place your SSH keys inside of '~/.ssh'. Hit OK to continue when done." 8 78
+ssh-keygen -t ed25519
 chmod 400 ~/.ssh/*

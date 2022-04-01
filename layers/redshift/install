@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo apt-get install -y redshift gtk-redshift geoclue
-ln -s `pwd`/redshift.conf ~/.config/redshift.conf

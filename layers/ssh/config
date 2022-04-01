@@ -44,8 +44,15 @@ Host xavier
   HostName 192.168.0.107
 Host robot
   User kyle
-  HostName 10.103.79.139
+  HostName 10.103.102.253
   ForwardX11 yes
 Host kdt
   User k
   HostName 192.168.0.106
+Host lmlvector1
+  User k
+  HostName 158.130.52.49
+Host lmlvector2
+  User k
+  HostName 158.130.52.10
+
