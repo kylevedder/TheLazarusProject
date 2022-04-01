@@ -55,4 +55,7 @@ Host lmlvector1
 Host lmlvector2
   User k
   HostName 158.130.52.10
+Host lmlshaperotator
+  User k
+  HostName 158.130.52.22
 
