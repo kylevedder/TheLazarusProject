@@ -3,6 +3,7 @@
     "cmake.configureOnOpen": true,
     "editor.fontFamily": "Iosevka, 'monospace', monospace, 'Droid Sans Fallback'",
     "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.experimentalRefreshOnResume": true,
     "editor.largeFileOptimizations": false,
     "workbench.colorTheme": "Default High Contrast",
     "workbench.colorCustomizations": {
@@ -10,7 +11,8 @@
         "editorLineNumber.foreground": "#AAAAAA",
       },
       "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "*.pdf": "default"
       },
       "jupyter.askForKernelRestart": false,
       "notebook.cellToolbarLocation": {
@@ -27,7 +29,22 @@
         "idxs",
         "imshow",
         "intrinsics",
+        "linalg",
         "robonet"
       ],
       "nvidia-smi.drawtype": "circledigit",
+      "python.analysis.extraPaths": ["~/code/"],
+      "python.formatting.provider": "yapf",
+      "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+      },
+      "editor.minimap.enabled": false,
+      "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.python"
+      },
+      "window.zoomLevel": -1,
 }
