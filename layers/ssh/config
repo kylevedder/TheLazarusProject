@@ -44,10 +44,7 @@ Host lmlvector2
   HostName 158.130.52.10
 Host lmlshaperotator
   User k
-<<<<<<< HEAD
   HostName 158.130.50.39
-=======
-  HostName 158.130.52.22
 Host robot
   User kyle
   HostName 10.103.102.253
@@ -79,5 +76,4 @@ Host argo-compute-efs-1
 Host neehar
   User nperi
   HostName nperi.sp.cs.cmu.edu
->>>>>>> 0155cd3262c858843d208f03f115344f4f6f7764
 
