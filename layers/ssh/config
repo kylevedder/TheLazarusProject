@@ -38,7 +38,7 @@ Host klt
   Port 22
 Host cluster
   User kvedder
-  HostName kostas-ap.seas.upenn.edu 
+  HostName chiron.seas.upenn.edu 
 Host xavier
   User k
   HostName 192.168.0.107
@@ -57,5 +57,5 @@ Host lmlvector2
   HostName 158.130.52.10
 Host lmlshaperotator
   User k
-  HostName 158.130.52.22
+  HostName 158.130.50.39
 

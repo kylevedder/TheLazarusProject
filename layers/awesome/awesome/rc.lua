@@ -51,8 +51,8 @@ end
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "lxterminal"
-editor = os.getenv("EDITOR") or "emacs"
+terminal = "gnome-terminal"
+editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -169,8 +169,12 @@ local netupinfo = lain.widget.net({
 local baticon = wibox.widget.imagebox(beautiful.widget_batt)
 local bat = lain.widget.bat({
     settings = function()
-        local perc = bat_now.perc ~= "N/A" and  bat_now.perc .. "%" or bat_now.perc
-
+        -- if bat_now.perc equals "N/A" then return from the function early
+        if bat_now.perc == "N/A" then
+            return
+        end
+        
+        local perc = bat_now.perc .. "%" 
         if bat_now.ac_status == 1 then
             perc = perc .. " plug"
         end

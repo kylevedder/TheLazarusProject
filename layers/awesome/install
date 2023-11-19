@@ -6,7 +6,7 @@ else
   sudo add-apt-repository  ppa:klaus-vormweg/awesome -y
   sudo apt update
   sudo apt install -y awesome make
-  mkdir -p ~/Pictures/screenshots/
-  ln -s `pwd`/awesome ~/.config/awesome
-  cd ./awesome/lux && sudo make install && sudo lux
 fi
+mkdir -p ~/Pictures/screenshots/
+ln -s `pwd`/awesome ~/.config/awesome
+

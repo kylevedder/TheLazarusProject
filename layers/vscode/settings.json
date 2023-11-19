@@ -30,4 +30,5 @@
         "robonet"
       ],
       "nvidia-smi.drawtype": "circledigit",
+      "window.zoomLevel": -1,
 }
