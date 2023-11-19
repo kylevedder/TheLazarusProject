@@ -1,0 +1,3 @@
+#!/bin/bash
+ cat ~/.bash_eternal_history | grep "$1"
+ tail ~/.bash_eternal_history

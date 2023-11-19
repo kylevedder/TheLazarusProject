@@ -1,15 +1,3 @@
-Host aws-ec2-micro
-  User ubuntu
-  HostName 54.89.126.234
-  IdentityFile ~/.ssh/aws-ec2key.pem
-Host aws-ec2-medium
-  User ubuntu
-  HostName 54.152.117.85
-  IdentityFile ~/.ssh/aws-ec2key.pem
-Host lubuntu
-  User student
-  HostName localhost
-  Port 2048
 Host lml0
   User lifelongml-penn0
   HostName gpuworkstation.cis.upenn.edu
@@ -38,14 +26,13 @@ Host klt
   Port 22
 Host cluster
   User kvedder
-  HostName chiron.seas.upenn.edu 
+  HostName neowise.seas.upenn.edu 
+Host clusteradmin
+  User admin-grasp
+  HostName chiron.seas.upenn.edu
 Host xavier
   User k
   HostName 192.168.0.107
-Host robot
-  User kyle
-  HostName 10.103.102.253
-  ForwardX11 yes
 Host kdt
   User k
   HostName 192.168.0.106
@@ -57,5 +44,40 @@ Host lmlvector2
   HostName 158.130.52.10
 Host lmlshaperotator
   User k
+<<<<<<< HEAD
   HostName 158.130.50.39
+=======
+  HostName 158.130.52.22
+Host robot
+  User kyle
+  HostName 10.103.102.253
+  ForwardX11 yes
+Host icrarobot
+  User icrademo
+  HostName 10.103.102.253
+  ForwardX11 yes
+Host icrajetson
+  User grasp_nvidia
+  HostName 10.42.42.2
+  ProxyJump icrarobot
+  ForwardX11 yes
+Host argolaptop
+  User kvedder
+  HostName 2607:f470:6:1001:507a:a73a:1f59:fe49
+  ForwardX11 yes
+Host argodevel
+  User ubuntu
+  HostName 10.225.117.88
+  IdentityFile ~/.ssh/kvedder.pem
+  ForwardX11 yes
+  ProxyJump argolaptop
+Host argo-compute-efs-1
+  HostName 10.225.116.173
+  IdentityFile  ~/.ssh/kvedder.pem
+  User ubuntu
+  ProxyJump argolaptop
+Host neehar
+  User nperi
+  HostName nperi.sp.cs.cmu.edu
+>>>>>>> 0155cd3262c858843d208f03f115344f4f6f7764
 

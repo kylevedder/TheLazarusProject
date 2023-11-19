@@ -18,9 +18,9 @@ from pathlib import Path
 present_devices = sorted([l.split(" ")[0] for l in subprocess.getoutput("xrandr --query").split("\n") if "connected" in l])
 current_shape = subprocess.getoutput("xrandr --query").split("\n")[0].split(', ')[1].replace("current ", "")
 
-is_desktop = (present_devices == ['DP-0', 'DP-1', 'DP-2', 'DP-3', 'HDMI-0', 'USB-C-0'])
+is_desktop = (present_devices == ['DP-0', 'DP-1', 'DP-2', 'DP-3', 'HDMI-0', 'USB-C-0'] or present_devices == ['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-2-0', 'DP-2-1', 'DP-2-2', 'DP-2-3', 'DP-2-4', 'DP-2-5', 'DP-2-6', 'DP-2-7', 'DP-3', 'DP-3-0', 'DP-3-1', 'DP-3-2', 'DP-3-3', 'DP-3-4', 'DP-3-5', 'DP-3-6', 'DP-3-7', 'DP-4', 'DP-5', 'DP-6', 'DP-7'])
 is_laptop = (present_devices ==  ['DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-3-1', 'DP-1-3-2', 'DP-1-3-3', 'HDMI-1-1', 'HDMI-1-2', 'HDMI-1-3', 'eDP-1-1'])
-is_lab_desktop = (present_devices == ['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'DP-6', 'DP-7'])
+is_lab_desktop = (present_devices == ['DP-1', 'DP-3'] or  ['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'DP-6', 'DP-7'])
 
 if is_laptop:
     print("Laptop")

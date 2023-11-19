@@ -150,3 +150,6 @@ unset __conda_setup
 
 export PM_PACKAGES_ROOT=$HOME/packman-repo
 
+export PATH=$HOME/code/offline_sceneflow/util_scripts/:$PATH
+eval "$(github-copilot-cli alias -- "$0")"
+export WANDB_API_KEY=109bbde7c3160e6039c6aeeaa3447b56782c0a43
