@@ -112,9 +112,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
-source /opt/ros/melodic/setup.bash > /dev/null 2>&1
-
 # Eternal bash history.
 # ---------------------
 # Undocumented feature which sets the size to "unlimited".
@@ -128,9 +125,6 @@ export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command.
 # http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin
-#export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/libGLEW.so
 
 #PATH="/home/k/anaconda3/bin:$PATH"
 # >>> conda initialize >>>
@@ -149,7 +143,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export PM_PACKAGES_ROOT=$HOME/packman-repo
-
-export PATH=$HOME/code/offline_sceneflow/util_scripts/:$PATH
+export PATH=$HOME/bin/:$HOME/code/offline_sceneflow/util_scripts/:$PATH
 eval "$(github-copilot-cli alias -- "$0")"
 export WANDB_API_KEY=109bbde7c3160e6039c6aeeaa3447b56782c0a43

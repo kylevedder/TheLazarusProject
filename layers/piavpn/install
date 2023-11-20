@@ -1,5 +1,0 @@
-#!/bin/bash
-sudo apt -y install curl network-manager-openvpn-gnome && \
-wget https://www.privateinternetaccess.com/installer/pia-nm.sh && \
-sudo bash pia-nm.sh && \
-echo "Please configure the added VPNs with your account password!"

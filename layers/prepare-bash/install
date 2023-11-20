@@ -5,4 +5,7 @@ rm ~/.bashrc
 ln -s `pwd`/.bashrc ~/.bashrc
 ln -s `pwd`/.bash_aliases ~/.bash_aliases
 ln -s `pwd`/.bash_eternal_history ~/.bash_eternal_history
+ln -s `pwd`/bin ~/bin
+mkdir ~/code > /dev/null 2>&1
+sudo apt -y install lolcat cowsay jq
 exit 0

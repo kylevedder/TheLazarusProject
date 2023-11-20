@@ -25,6 +25,8 @@ def parse_layers():
             layers = f.readlines()
         # Removes extra whitespace.
         layers = [x.strip() for x in layers]
+    # Filter out layers that start with #
+    layers = [l for l in layers if not l.startswith("#")]
     return layers
 
 def is_valid_layer(layer):

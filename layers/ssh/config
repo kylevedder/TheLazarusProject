@@ -44,7 +44,7 @@ Host lmlvector2
   HostName 158.130.52.10
 Host lmlshaperotator
   User k
-  HostName 158.130.52.22
+  HostName 158.130.50.39
 Host robot
   User kyle
   HostName 10.103.102.253

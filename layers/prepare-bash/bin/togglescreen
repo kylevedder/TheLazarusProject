@@ -18,9 +18,16 @@ from pathlib import Path
 present_devices = sorted([l.split(" ")[0] for l in subprocess.getoutput("xrandr --query").split("\n") if "connected" in l])
 current_shape = subprocess.getoutput("xrandr --query").split("\n")[0].split(', ')[1].replace("current ", "")
 
-is_desktop = (present_devices == ['DP-0', 'DP-1', 'DP-2', 'DP-3', 'HDMI-0', 'USB-C-0'] or present_devices == ['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-2-0', 'DP-2-1', 'DP-2-2', 'DP-2-3', 'DP-2-4', 'DP-2-5', 'DP-2-6', 'DP-2-7', 'DP-3', 'DP-3-0', 'DP-3-1', 'DP-3-2', 'DP-3-3', 'DP-3-4', 'DP-3-5', 'DP-3-6', 'DP-3-7', 'DP-4', 'DP-5', 'DP-6', 'DP-7'])
-is_laptop = (present_devices ==  ['DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-3-1', 'DP-1-3-2', 'DP-1-3-3', 'HDMI-1-1', 'HDMI-1-2', 'HDMI-1-3', 'eDP-1-1'])
-is_lab_desktop = (present_devices == ['DP-1', 'DP-3'] or  ['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'DP-6', 'DP-7'])
+print("Present devices:", present_devices)
+
+
+def is_present_device(device_list):
+    return sorted([e.lower() for e in device_list]) == sorted([e.lower() for e in present_devices])
+
+
+is_desktop = is_present_device(['DP-0', 'DP-1', 'DP-2', 'DP-3', 'HDMI-0', 'USB-C-0']) or is_present_device(['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-2-0', 'DP-2-1', 'DP-2-2', 'DP-2-3', 'DP-2-4', 'DP-2-5', 'DP-2-6', 'DP-2-7', 'DP-3', 'DP-3-0', 'DP-3-1', 'DP-3-2', 'DP-3-3', 'DP-3-4', 'DP-3-5', 'DP-3-6', 'DP-3-7', 'DP-4', 'DP-5', 'DP-6', 'DP-7']) or is_present_device(['DP-0', 'DP-1', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'HDMI-0'])
+is_laptop = is_present_device(['DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-3-1', 'DP-1-3-2', 'DP-1-3-3', 'HDMI-1-1', 'HDMI-1-2', 'HDMI-1-3', 'eDP-1-1'])
+is_lab_desktop = is_present_device(['DP-1', 'DP-3']) or is_present_device(['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'DP-6', 'DP-7'])
 
 if is_laptop:
     print("Laptop")
@@ -37,6 +44,8 @@ elif is_desktop:
     elif current_shape == "4080 x 1920" or current_shape == "5760 x 1080":
         print(subprocess.getoutput("~/.screenlayout/desktop-triple-vert.sh"))
 elif is_lab_desktop:
+    print("Lab Desktop")
+    print("Current shape:", current_shape)
     print(subprocess.getoutput("~/.screenlayout/lab-desktop-dual-vert.sh"))
 else:
     print("Unknown device list:", present_devices)
