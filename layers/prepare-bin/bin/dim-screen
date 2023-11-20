@@ -1,7 +1,0 @@
-#!/bin/bash
-redshift_count=$(ps aux | grep redshift | wc -l)
-if [ "$redshift_count" -gt "1" ]; then
-    echo "Redshift already running! Doing nothing."
-else
-    (redshift &)
-fi

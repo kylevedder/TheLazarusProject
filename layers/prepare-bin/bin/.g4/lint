@@ -1,9 +1,0 @@
-#!/bin/bash
-~/bin/.g4/cpplint.py $(find . -name '*.cc' -o -name '*.h' -name '*.cpp')
-ret=$?
-if [ $ret -ne 0 ]; then
-    echo -e "\033[1m\e[31mC++ Lint Failures!!!\e[0m";
-    exit -1;
-fi
-echo -e "\033[1m\e[32mC++ Lint Passed...\e[0m";
-exit 0;

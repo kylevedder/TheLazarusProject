@@ -402,12 +402,6 @@ globalkeys = gears.table.join(
               {description = "screenshot", group = "awesome"}),
     awful.key({ "Shift"           }, "Print",  function () awful.util.spawn_with_shell("gnome-screenshot -a")  end,
               {description = "screenshot specific area", group = "awesome"}),
-    awful.key({ "Control", "Mod1" }, "l",      function () awful.util.spawn_with_shell("dm-tool lock")  end,
-              {description = "lock screen", group = "awesome"}),
-    awful.key({ "Control", "Mod1" }, "s",      function () awful.util.spawn_with_shell("dm-tool lock")  end,
-              {description = "suspend and lock screen", group = "awesome"}),
-    awful.key({ "Control", "Mod1" }, "e",      function () awful.util.spawn_with_shell("lxsession-logout")  end,
-              {description = "show shutdown options", group = "awesome"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -428,10 +422,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
-              {description = "select previous", group = "layout"}),
-    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell("lux -m 1 -M 600 -s 15")  end,
-              {description = "decrease brightness", group = "client"}),
-    awful.key({                   }, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell("lux -m 1 -M 600 -a 15")  end,
               {description = "increase brightness", group = "client"}),
     awful.key({                   }, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer -D pulse -q sset Master 3%- unmute")  end,
               {description = "decrease volume", group = "client"}),
@@ -449,6 +439,8 @@ globalkeys = gears.table.join(
                   end
               end,
               {description = "restore minimized", group = "client"}),
+    awful.key({ modkey, "Control" }, "t",  function () awful.util.spawn_with_shell("togglescreen")  end,
+              {description = "toggle screen", group = "client"}),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
