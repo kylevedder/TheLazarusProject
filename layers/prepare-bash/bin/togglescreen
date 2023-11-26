@@ -27,7 +27,7 @@ def is_present_device(device_list):
 
 is_desktop = is_present_device(['DP-0', 'DP-1', 'DP-2', 'DP-3', 'HDMI-0', 'USB-C-0']) or is_present_device(['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-2-0', 'DP-2-1', 'DP-2-2', 'DP-2-3', 'DP-2-4', 'DP-2-5', 'DP-2-6', 'DP-2-7', 'DP-3', 'DP-3-0', 'DP-3-1', 'DP-3-2', 'DP-3-3', 'DP-3-4', 'DP-3-5', 'DP-3-6', 'DP-3-7', 'DP-4', 'DP-5', 'DP-6', 'DP-7']) or is_present_device(['DP-0', 'DP-1', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'HDMI-0'])
 is_laptop = is_present_device(['DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-3-1', 'DP-1-3-2', 'DP-1-3-3', 'HDMI-1-1', 'HDMI-1-2', 'HDMI-1-3', 'eDP-1-1'])
-is_lab_desktop = is_present_device(['DP-1', 'DP-3']) or is_present_device(['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'DP-6', 'DP-7'])
+is_lab_desktop = is_present_device(['DP-1', 'DP-3']) or is_present_device(['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-1-6', 'DP-1-7', 'DP-2', 'DP-3', 'DP-4', 'DP-5', 'DP-6', 'DP-7']) or is_present_device(['DP-0', 'DP-1', 'DP-1-0', 'DP-1-1', 'DP-1-2', 'DP-1-3', 'DP-1-4', 'DP-1-5', 'DP-2', 'DP-2-0', 'DP-2-1', 'DP-2-2', 'DP-2-3', 'DP-2-4', 'DP-2-5', 'DP-3', 'DP-4', 'DP-5', 'DP-6', 'DP-7', 'HDMI-1-0', 'HDMI-1-1', 'HDMI-2-0'])
 
 if is_laptop:
     print("Laptop")
