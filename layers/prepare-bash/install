@@ -7,7 +7,7 @@ ln -s `pwd`/.bash_aliases ~/.bash_aliases
 ln -s `pwd`/.bash_eternal_history ~/.bash_eternal_history
 rm -f ~/bin
 ln -s `pwd`/bin ~/bin
-cat `pwd`/gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
+cat `pwd`/gterminal.preferences | dconf load /org/gnome/terminal/:/
 mkdir ~/code > /dev/null 2>&1
 sudo apt -y install lolcat cowsay jq
 exit 0
