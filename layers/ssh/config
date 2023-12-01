@@ -58,21 +58,6 @@ Host icrajetson
   HostName 10.42.42.2
   ProxyJump icrarobot
   ForwardX11 yes
-Host argolaptop
-  User kvedder
-  HostName 2607:f470:6:1001:507a:a73a:1f59:fe49
-  ForwardX11 yes
-Host argodevel
-  User ubuntu
-  HostName 10.225.117.88
-  IdentityFile ~/.ssh/kvedder.pem
-  ForwardX11 yes
-  ProxyJump argolaptop
-Host argo-compute-efs-1
-  HostName 10.225.116.173
-  IdentityFile  ~/.ssh/kvedder.pem
-  User ubuntu
-  ProxyJump argolaptop
 Host neehar
   User nperi
   HostName nperi.sp.cs.cmu.edu
