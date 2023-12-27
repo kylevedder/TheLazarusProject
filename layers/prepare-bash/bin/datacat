@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+import numpy as np
+import pickle
+from pathlib import Path
+import argparse
+
+
+def read_npz(file_path):
+    # Validate if the file exists
+    if not Path(file_path).is_file():
+        print("File does not exist.")
+        return
+
+    # Open the npz file and store it as a dict
+    data = np.load(file_path, allow_pickle=True)
+    return data
+
+
+def read_pickle(file_path):
+    # Validate if the file exists
+    if not Path(file_path).is_file():
+        print("File does not exist.")
+        return
+
+    # Open the pickle file and store it as a dict
+    with open(file_path, "rb") as f:
+        data = pickle.load(f)
+    return data
+
+
+def read_feather(file_path):
+    # Validate if the file exists
+    if not Path(file_path).is_file():
+        print("File does not exist.")
+        return
+
+    import pandas as pd
+
+    # Open the feather file and store it as a dict
+    data = pd.read_feather(file_path)
+    return data
+
+
+def print_npz(data):
+    # Print the keys and types of each item in the dict
+    for key, value in data.items():
+        print(f"Key: {key}")
+        print(f"\tType: {type(value)}")
+
+        # If the value is a numpy array, print dtype and shape
+        if isinstance(value, np.ndarray):
+            print(f"\tDtype: {value.dtype}")
+            print(f"\tShape: {value.shape}")
+
+
+def print_pickle(data):
+    print(data)
+
+
+def print_feather(data):
+    print(data)
+
+
+# Parse the command-line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("file_path", help="Path to the file", type=Path)
+# Add an optional argument to take a python command to eval
+parser.add_argument("-e",
+                    "--eval",
+                    help="Python command to eval",
+                    default=None)
+args = parser.parse_args()
+
+# Call the function with the provided npz file path
+if args.file_path.suffix == ".npz":
+    data = read_npz(args.file_path)
+elif args.file_path.suffix == ".pickle" or args.file_path.suffix == ".pkl":
+    data = read_pickle(args.file_path)
+elif args.file_path.suffix == ".feather":
+    data = read_feather(args.file_path)
+else:
+    raise ValueError(f"File type {args.file_path.suffix} not supported.")
+
+if args.eval:
+    # If the eval argument is provided, eval the command
+    print(eval(args.eval))
+else:
+    # Otherwise, print the data
+    if args.file_path.suffix == ".npz":
+        print_npz(data)
+
+    elif args.file_path.suffix == ".pickle" or args.file_path.suffix == ".pkl":
+        print_pickle(data)
+
+    elif args.file_path.suffix == ".feather":
+        print_feather(data)
+    else:
+        print("File type not supported.")
