@@ -33,13 +33,14 @@
         "robonet"
       ],
       "nvidia-smi.drawtype": "circledigit",
-      "python.analysis.extraPaths": ["~/code/"],
+      "python.analysis.extraPaths": ["~/code/", "~/code/bucketed_scene_flow_eval/"],
       "python.formatting.provider": "yapf",
       "github.copilot.enable": {
         "*": true,
-        "yaml": false,
         "plaintext": false,
-        "markdown": false
+        "markdown": true,
+        "scminput": false,
+        "yaml": false
       },
       "editor.minimap.enabled": false,
       "[python]": {

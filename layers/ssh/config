@@ -57,4 +57,7 @@ Host icrajetson
 Host neehar
   User nperi
   HostName nperi.sp.cs.cmu.edu
+Host rsyncstorage
+  User de3215
+  HostName de3215.rsync.net
 
