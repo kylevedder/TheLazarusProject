@@ -1,0 +1,6 @@
+#!/bin/bash
+# Custom bash script to run and disown gpclient
+
+# Run gpclient, redirect stdout to /tmp/pennvpn.out, stderr to /tmp/pennvpn.err
+# and disown the process
+gpclient > /tmp/pennvpn.out 2> /tmp/pennvpn.err & disown

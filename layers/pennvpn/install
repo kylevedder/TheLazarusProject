@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo add-apt-repository ppa:yuezk/globalprotect-openconnect
+sudo apt update
+sudo apt install globalprotect-openconnect
+
+
