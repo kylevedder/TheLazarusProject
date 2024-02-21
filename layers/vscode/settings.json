@@ -1,51 +1,50 @@
 {
-    "clangd.path": "/home/k/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/10.0.0/clangd_10.0.0/bin/clangd",
-    "cmake.configureOnOpen": true,
-    "editor.fontFamily": "Iosevka, 'monospace', monospace, 'Droid Sans Fallback'",
-    "workbench.startupEditor": "newUntitledFile",
-    "terminal.integrated.experimentalRefreshOnResume": true,
-    "editor.largeFileOptimizations": false,
-    "workbench.colorTheme": "Default High Contrast",
-    "workbench.colorCustomizations": {
-        "editor.background": "#111111",
-        "editorLineNumber.foreground": "#AAAAAA",
-      },
-      "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook",
-        "*.pdf": "default"
-      },
-      "jupyter.askForKernelRestart": false,
-      "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-      },
-      "editor.inlineSuggest.enabled": true,
-      "cSpell.userWords": [
-        "asarray",
-        "astype",
-        "denormalize",
-        "dtype",
-        "idxes",
-        "idxs",
-        "imshow",
-        "intrinsics",
-        "linalg",
-        "robonet"
-      ],
-      "nvidia-smi.drawtype": "circledigit",
-      "python.analysis.extraPaths": ["~/code/", "~/code/bucketed_scene_flow_eval/"],
-      "python.formatting.provider": "yapf",
-      "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": true,
-        "scminput": false,
-        "yaml": false
-      },
-      "editor.minimap.enabled": false,
-      "[python]": {
-        "editor.formatOnType": true,
-        "editor.defaultFormatter": "eeyore.yapf"
-      },
-      "window.zoomLevel": -1,
+  "editor.fontFamily": "Iosevka, 'monospace', monospace, 'Droid Sans Fallback'",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.largeFileOptimizations": false,
+  "workbench.colorTheme": "Default High Contrast",
+  "workbench.colorCustomizations": {
+    "editor.background": "#111111",
+    "editorLineNumber.foreground": "#AAAAAA",
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.pdf": "default"
+  },
+  "jupyter.askForKernelRestart": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "cSpell.userWords": [
+    "asarray",
+    "astype",
+    "denormalize",
+    "dtype",
+    "idxes",
+    "idxs",
+    "imshow",
+    "intrinsics",
+    "linalg",
+    "robonet"
+  ],
+  "python.analysis.extraPaths": [
+    "~/code/",
+    "~/code/bucketed_scene_flow_eval/"
+  ],
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "yaml": false
+  },
+  "editor.minimap.enabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+  },
+  "window.zoomLevel": -1,
+  "redhat.telemetry.enabled": true,
 }

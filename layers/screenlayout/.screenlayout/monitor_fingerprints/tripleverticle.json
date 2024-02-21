@@ -1,0 +1,17 @@
+{
+    "Monitor 1": {
+        "Name": "DP-1",
+        "Resolution": "1080x1920",
+        "Orientation": "right"
+    },
+    "Monitor 2": {
+        "Name": "DP-3",
+        "Resolution": "1080x1920",
+        "Orientation": "left"
+    },
+    "Monitor 3": {
+        "Name": "DP-4",
+        "Resolution": "1440x3440",
+        "Orientation": "left"
+    }
+}

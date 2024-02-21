@@ -2,3 +2,4 @@ layers/openvpn/pia-nm.sh
 *~
 *.#*
 *.uuid
+**__pycache__/
