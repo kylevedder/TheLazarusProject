@@ -17,10 +17,10 @@ theme.wallpaper = function(s)
   local h = tonumber(s.geometry.height)
   if w < h then
     -- Vertical
-    return (theme.confdir .. "/wereback.jpg")
+    return (theme.confdir .. "/mass_effect.jpg")
   end
   -- Horizontal
-  return (theme.confdir .. "/wereback.jpg")
+  return (theme.confdir .. "/mass_effect.jpg")
 end
 
 -- }}}

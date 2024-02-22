@@ -146,3 +146,9 @@ export PM_PACKAGES_ROOT=$HOME/packman-repo
 export PATH=$HOME/bin/:$HOME/code/offline_sceneflow/util_scripts/:$PATH
 eval "$(github-copilot-cli alias -- "$0")"
 export WANDB_API_KEY=109bbde7c3160e6039c6aeeaa3447b56782c0a43
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/k/google-cloud-sdk/path.bash.inc' ]; then . '/home/k/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/k/google-cloud-sdk/completion.bash.inc' ]; then . '/home/k/google-cloud-sdk/completion.bash.inc'; fi
