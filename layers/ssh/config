@@ -41,6 +41,7 @@ Host lmlvector2
 Host lmlshaperotator
   User k
   HostName 158.130.50.49
+  ForwardX11 yes
 Host robot
   User kyle
   HostName 10.103.102.253
