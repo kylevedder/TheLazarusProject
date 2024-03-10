@@ -2,6 +2,7 @@
 import numpy as np
 import pickle
 from pathlib import Path
+import json
 import argparse
 
 
@@ -41,6 +42,18 @@ def read_feather(file_path):
     return data
 
 
+def read_json(file_path):
+    # Validate if the file exists
+    if not Path(file_path).is_file():
+        print("File does not exist.")
+        return
+
+    # Open the json file and store it as a dict
+    with open(file_path, "r") as f:
+        data = json.load(f)
+    return data
+
+
 def print_npz(data):
     # Print the keys and types of each item in the dict
     for key, value in data.items():
@@ -61,14 +74,16 @@ def print_feather(data):
     print(data)
 
 
+def print_json(data):
+    # Pretty print the json data
+    print(json.dumps(data, indent=4))
+
+
 # Parse the command-line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("file_path", help="Path to the file", type=Path)
 # Add an optional argument to take a python command to eval
-parser.add_argument("-e",
-                    "--eval",
-                    help="Python command to eval",
-                    default=None)
+parser.add_argument("-e", "--eval", help="Python command to eval", default=None)
 args = parser.parse_args()
 
 # Call the function with the provided npz file path
@@ -78,6 +93,8 @@ elif args.file_path.suffix == ".pickle" or args.file_path.suffix == ".pkl":
     data = read_pickle(args.file_path)
 elif args.file_path.suffix == ".feather":
     data = read_feather(args.file_path)
+elif args.file_path.suffix == ".json":
+    data = read_json(args.file_path)
 else:
     raise ValueError(f"File type {args.file_path.suffix} not supported.")
 
@@ -94,5 +111,7 @@ else:
 
     elif args.file_path.suffix == ".feather":
         print_feather(data)
+    elif args.file_path.suffix == ".json":
+        print_json(data)
     else:
         print("File type not supported.")
