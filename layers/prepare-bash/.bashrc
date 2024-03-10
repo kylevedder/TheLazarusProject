@@ -21,6 +21,8 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
+source ~/bin/git-prompt.sh
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -52,10 +54,10 @@ fi
 
 INFO_STR="\$? "
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}'"$INFO_STR"'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}'"$INFO_STR"'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[38;5;46m\]\u@\h\[\033[00m\]:\[\033[38;5;33m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}'"$INFO_STR"'\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}'"$INFO_STR"'\u@\h:\w$(__git_ps1 " (%s)")\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -145,7 +147,6 @@ unset __conda_setup
 export PM_PACKAGES_ROOT=$HOME/packman-repo
 export PATH=$HOME/bin/:$HOME/code/offline_sceneflow/util_scripts/:$PATH
 eval "$(github-copilot-cli alias -- "$0")"
-export WANDB_API_KEY=109bbde7c3160e6039c6aeeaa3447b56782c0a43
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/k/google-cloud-sdk/path.bash.inc' ]; then . '/home/k/google-cloud-sdk/path.bash.inc'; fi

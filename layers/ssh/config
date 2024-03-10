@@ -64,4 +64,10 @@ Host rsyncstorage
 Host nlaptop
   User kvedder
   HostName 192.168.1.3
+  ForwardX11 yes
+Host lmlnlaptop
+  User kvedder
+  HostName 192.168.1.3
+  ProxyJump lmlshaperotator
+  ForwardX11 yes
 

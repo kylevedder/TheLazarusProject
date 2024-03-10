@@ -95,6 +95,9 @@ print(f"Known fingerprint name: {known_fingerprint}")
 if known_fingerprint == "tripleverticle":
     logging.debug("Applying desktop-triple-vert configuration")
     run_configuration("desktop-triple-vert")
+if known_fingerprint == "homeduallogin":
+    logging.debug("Applying home-dual-vert configuration")
+    run_configuration("home-dual-vert")
 else:
     logging.debug("Applying default configuration")
     run_configuration(args.default_config_name)
