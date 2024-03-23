@@ -4,6 +4,18 @@ import pickle
 from pathlib import Path
 import json
 import argparse
+import zipfile
+
+
+def read_zip(file_path):
+    # Validate if the file exists
+    if not Path(file_path).is_file():
+        print("File does not exist.")
+        return
+
+    # Open the zip file and store it as a dict
+    data = zipfile.ZipFile(file_path, "r")
+    return data
 
 
 def read_npz(file_path):
@@ -54,6 +66,12 @@ def read_json(file_path):
     return data
 
 
+def print_zip(data):
+    # Print the keys and types of each item in the dict
+    for key in data.namelist():
+        print(f"Key: {key}")
+
+
 def print_npz(data):
     # Print the keys and types of each item in the dict
     for key, value in data.items():
@@ -87,7 +105,7 @@ parser.add_argument("-e", "--eval", help="Python command to eval", default=None)
 args = parser.parse_args()
 
 # Call the function with the provided npz file path
-if args.file_path.suffix == ".npz":
+if args.file_path.suffix == ".npz" or args.file_path.suffix == ".npy":
     data = read_npz(args.file_path)
 elif args.file_path.suffix == ".pickle" or args.file_path.suffix == ".pkl":
     data = read_pickle(args.file_path)
@@ -95,6 +113,8 @@ elif args.file_path.suffix == ".feather":
     data = read_feather(args.file_path)
 elif args.file_path.suffix == ".json":
     data = read_json(args.file_path)
+elif args.file_path.suffix == ".zip":
+    data = read_zip(args.file_path)
 else:
     raise ValueError(f"File type {args.file_path.suffix} not supported.")
 
@@ -103,7 +123,7 @@ if args.eval:
     print(eval(args.eval))
 else:
     # Otherwise, print the data
-    if args.file_path.suffix == ".npz":
+    if args.file_path.suffix == ".npz" or args.file_path.suffix == ".npy":
         print_npz(data)
 
     elif args.file_path.suffix == ".pickle" or args.file_path.suffix == ".pkl":
@@ -113,5 +133,7 @@ else:
         print_feather(data)
     elif args.file_path.suffix == ".json":
         print_json(data)
+    elif args.file_path.suffix == ".zip":
+        print_zip(data)
     else:
         print("File type not supported.")
