@@ -17,7 +17,7 @@ theme.wallpaper = function(s)
   local h = tonumber(s.geometry.height)
   if w < h then
     -- Vertical
-    return (theme.confdir .. "/mass_effect.jpg")
+    return (theme.confdir .. "/tom_brady_scaling.png")
   end
   -- Horizontal
   return (theme.confdir .. "/mass_effect.jpg")
