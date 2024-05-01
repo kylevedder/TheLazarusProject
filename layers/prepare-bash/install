@@ -10,4 +10,13 @@ ln -s `pwd`/bin ~/bin
 cat `pwd`/gterminal.preferences | dconf load /org/gnome/terminal/
 mkdir ~/code > /dev/null 2>&1
 sudo apt -y install lolcat cowsay jq
+
+# Setup Kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -s ~/.local/kitty.app/bin/kitty ~/bin/
+ln -s ~/.local/kitty.app/bin/kitten ~/bin/
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/kitty 50
+sudo update-alternatives --config x-terminal-emulator --skip-auto
+ln -s `pwd`/kitty.conf ~/.config/kitty/kitty.conf
+
 exit 0

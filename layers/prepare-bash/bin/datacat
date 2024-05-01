@@ -72,16 +72,33 @@ def print_zip(data):
         print(f"Key: {key}")
 
 
-def print_npz(data):
-    # Print the keys and types of each item in the dict
-    for key, value in data.items():
-        print(f"Key: {key}")
-        print(f"\tType: {type(value)}")
+def _print_recusrive(data, level=0):
+    if isinstance(data, dict):
+        print(f"{'  ' * level}Type: dict")
+        for key, value in data.items():
+            print(f"{'  ' * level}Key: {key}")
+            _print_recusrive(value, level + 1)
+    elif isinstance(data, list):
+        print(f"{'  ' * level}Type: list")
+        for i, value in enumerate(data):
+            print(f"{'  ' * level}Index: {i}")
+            _print_recusrive(value, level + 1)
+    elif isinstance(data, np.ndarray):
+        if data.dtype == object:
+            print(f"{'  ' * level}Dtype: {data.dtype}")
+            print(f"{'  ' * level}Shape: {data.shape}")
+            for i, value in enumerate(data):
+                print(f"{'  ' * level}Index: {i}")
+                _print_recusrive(value, level + 1)
+        else:
+            print(f"{'  ' * level}Dtype: {data.dtype}")
+            print(f"{'  ' * level}Shape: {data.shape}")
+    else:
+        print(f"{'  ' * level}Value: {data}")
 
-        # If the value is a numpy array, print dtype and shape
-        if isinstance(value, np.ndarray):
-            print(f"\tDtype: {value.dtype}")
-            print(f"\tShape: {value.shape}")
+
+def print_npz(data):
+    _print_recusrive(data)
 
 
 def print_pickle(data):
@@ -100,9 +117,17 @@ def print_json(data):
 # Parse the command-line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("file_path", help="Path to the file", type=Path)
+parser.add_argument(
+    "-p", "--preamble", help="Preamble python command to eval", type=str, default=None
+)
 # Add an optional argument to take a python command to eval
-parser.add_argument("-e", "--eval", help="Python command to eval", default=None)
+parser.add_argument(
+    "-e", "--eval", help="Python command to eval", type=str, default=None
+)
 args = parser.parse_args()
+
+if args.preamble:
+    exec(args.preamble)
 
 # Call the function with the provided npz file path
 if args.file_path.suffix == ".npz" or args.file_path.suffix == ".npy":

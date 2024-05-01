@@ -47,4 +47,7 @@
   },
   "window.zoomLevel": -1,
   "redhat.telemetry.enabled": true,
+  "remote.autoForwardPortsSource": "hybrid",
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.formatOnSave": true,
 }
