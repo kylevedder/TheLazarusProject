@@ -66,6 +66,7 @@ Host nlaptop
   User kvedder
   HostName 10.42.0.173
   ForwardX11 yes
+  IdentityFile ~/.ssh/id_ed25519
 Host lmlnlaptop
   User kvedder
   HostName 10.42.0.173

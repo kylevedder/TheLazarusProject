@@ -1,0 +1,4 @@
+#!/bin/bash
+latest_dir=$(ls -td $1/*/ | head -n 1)
+echo $latest_dir
+tensorboard --logdir=$latest_dir --port=6007

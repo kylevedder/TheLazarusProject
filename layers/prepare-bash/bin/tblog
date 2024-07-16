@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Default to port 6007, but if $2 is not empty, use that port instead
+port=6007
+if [ ! -z "$2" ]; then
+    port=$2
+fi
+
+tensorboard --logdir=$1 --port=$port

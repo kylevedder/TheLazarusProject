@@ -38,7 +38,7 @@
     "plaintext": false,
     "markdown": true,
     "scminput": false,
-    "yaml": false
+    "yaml": true
   },
   "editor.minimap.enabled": false,
   "[python]": {
@@ -50,4 +50,5 @@
   "remote.autoForwardPortsSource": "hybrid",
   "editor.defaultFormatter": "ms-python.black-formatter",
   "editor.formatOnSave": true,
+  "github.copilot.editor.enableAutoCompletions": true,
 }
