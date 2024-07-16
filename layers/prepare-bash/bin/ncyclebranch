@@ -1,0 +1,12 @@
+#!/bin/bash
+# Check if the first argument is provided
+if [ -n "$1" ]; then
+    MSG=$1
+else
+    MSG="Update"
+fi
+CURRENTBRANCH=$(git branch --show-current)
+git add . && git commit -am "$MSG" && git push origin $CURRENTBRANCH;
+ssh nlaptop "cd ~/code/offline_sceneflow && ~/bin/cyclebranch"
+
+

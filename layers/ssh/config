@@ -22,7 +22,8 @@ Host klt
   Port 22
 Host cluster
   User kvedder
-  HostName neowise.seas.upenn.edu 
+  HostName chiron.seas.upenn.edu 
+  ForwardX11 yes
 Host clusteradmin
   User admin-grasp
   HostName chiron.seas.upenn.edu
@@ -63,11 +64,12 @@ Host rsyncstorage
   HostName de3215.rsync.net
 Host nlaptop
   User kvedder
-  HostName 192.168.1.3
+  HostName 10.42.0.173
   ForwardX11 yes
+  IdentityFile ~/.ssh/id_ed25519
 Host lmlnlaptop
   User kvedder
-  HostName 192.168.1.3
+  HostName 10.42.0.173
   ProxyJump lmlshaperotator
   ForwardX11 yes
 
