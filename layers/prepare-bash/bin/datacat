@@ -65,6 +65,17 @@ def read_json(file_path):
         data = json.load(f)
     return data
 
+def read_pth(file_path):
+    # Validate if the file exists
+    if not Path(file_path).is_file():
+        print("File does not exist.")
+        return
+
+    import torch
+
+    # Open the pth file and store it as a dict
+    data = torch.load(file_path)
+    return data
 
 def print_zip(data):
     # Print the keys and types of each item in the dict
@@ -113,6 +124,8 @@ def print_json(data):
     # Pretty print the json data
     print(json.dumps(data, indent=4))
 
+def print_pth(data):
+    _print_recusrive(data)
 
 # Parse the command-line arguments
 parser = argparse.ArgumentParser()
@@ -129,7 +142,6 @@ args = parser.parse_args()
 if args.preamble:
     exec(args.preamble)
 
-# Call the function with the provided npz file path
 if args.file_path.suffix == ".npz" or args.file_path.suffix == ".npy":
     data = read_npz(args.file_path)
 elif args.file_path.suffix == ".pickle" or args.file_path.suffix == ".pkl":
@@ -140,6 +152,8 @@ elif args.file_path.suffix == ".json":
     data = read_json(args.file_path)
 elif args.file_path.suffix == ".zip":
     data = read_zip(args.file_path)
+elif args.file_path.suffix == ".pth":
+    data = read_pth(args.file_path)
 else:
     raise ValueError(f"File type {args.file_path.suffix} not supported.")
 
@@ -160,5 +174,7 @@ else:
         print_json(data)
     elif args.file_path.suffix == ".zip":
         print_zip(data)
+    elif args.file_path.suffix == ".pth":
+        print_pth(data)
     else:
         print("File type not supported.")
