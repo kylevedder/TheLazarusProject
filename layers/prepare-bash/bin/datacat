@@ -65,6 +65,7 @@ def read_json(file_path):
         data = json.load(f)
     return data
 
+
 def read_pth(file_path):
     # Validate if the file exists
     if not Path(file_path).is_file():
@@ -76,6 +77,15 @@ def read_pth(file_path):
     # Open the pth file and store it as a dict
     data = torch.load(file_path)
     return data
+
+
+def read_h5(file_path):
+    import h5py
+
+    # Open the h5 file and store it as a dict
+    data = h5py.File(file_path, "r")
+    return data
+
 
 def print_zip(data):
     # Print the keys and types of each item in the dict
@@ -124,8 +134,17 @@ def print_json(data):
     # Pretty print the json data
     print(json.dumps(data, indent=4))
 
+
 def print_pth(data):
     _print_recusrive(data)
+
+
+def print_h5(data):
+    # Enumerate through the groups and datasets
+    for key, value in data.items():
+        print(f"Key: {key}")
+        _print_recusrive(value)
+
 
 # Parse the command-line arguments
 parser = argparse.ArgumentParser()
@@ -154,6 +173,8 @@ elif args.file_path.suffix == ".zip":
     data = read_zip(args.file_path)
 elif args.file_path.suffix == ".pth":
     data = read_pth(args.file_path)
+elif args.file_path.suffix == ".h5":
+    data = read_h5(args.file_path)
 else:
     raise ValueError(f"File type {args.file_path.suffix} not supported.")
 
@@ -176,5 +197,7 @@ else:
         print_zip(data)
     elif args.file_path.suffix == ".pth":
         print_pth(data)
+    elif args.file_path.suffix == ".h5":
+        print_h5(data)
     else:
         print("File type not supported.")

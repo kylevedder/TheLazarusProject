@@ -98,6 +98,9 @@ if known_fingerprint == "tripleverticle":
 if known_fingerprint == "homeduallogin":
     logging.debug("Applying home-dual-vert configuration")
     run_configuration("home-dual-vert")
+if known_fingerprint == "dyna-dual-vert":
+    logging.debug("Applying dyna-display configuration")
+    run_configuration("dyna-dual-vert")
 else:
     logging.debug("Applying default configuration")
     run_configuration(args.default_config_name)

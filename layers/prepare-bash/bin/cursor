@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "MY CURSOR"
+
+# Define the directory to search for the AppImage
+DOWNLOAD_DIR="$HOME/Downloads"
+
+# Find the AppImage file
+APPIMAGE=$(find "$DOWNLOAD_DIR" -type f -name "cursor-*.AppImage" | head -n 1)
+
+echo $APPIMAGE
+
+# Check if the AppImage exists
+if [[ -z "$APPIMAGE" ]]; then
+  echo "Error: No AppImage matching 'cursor-*.AppImage' found in $DOWNLOAD_DIR"
+  exit 1
+fi
+
+# Make sure the AppImage is executable
+chmod +x "$APPIMAGE"
+
+# Forward all arguments to the AppImage
+"$APPIMAGE" "$@"

@@ -148,11 +148,11 @@ export PM_PACKAGES_ROOT=$HOME/packman-repo
 export PATH=$HOME/bin/:$HOME/.local/kitty.app/bin/:$HOME/code/offline_sceneflow/util_scripts/:$PATH
 eval "$(github-copilot-cli alias -- "$0")"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/k/google-cloud-sdk/path.bash.inc' ]; then . '/home/k/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/k/google-cloud-sdk/completion.bash.inc' ]; then . '/home/k/google-cloud-sdk/completion.bash.inc'; fi
-
 export MY_UID=$(id -u)
 export MY_GID=$(id -g)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/k/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/k/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/k/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/k/Downloads/google-cloud-sdk/completion.bash.inc'; fi
