@@ -1,0 +1,12 @@
+{
+    "Monitor 1": {
+        "Name": "HDMI-0",
+        "Resolution": "primary",
+        "Orientation": "1440x2560+1440+0"
+    },
+    "Monitor 2": {
+        "Name": "DP-1",
+        "Resolution": "1440x2560",
+        "Orientation": "left"
+    }
+}
